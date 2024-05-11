@@ -1,3 +1,12 @@
+#' Detect if OP3 API token is defined
+#'
+#' @return boolean, TRUE if 'OP3_API_TOKEN` is defined in the current
+#'   R session.
+#' @export
+op3_token_isset <- function() {
+  env_var_present("OP3_API_TOKEN")
+}
+
 #' Obtain OP3 API token
 #'
 #' Obtain the OP3 API token from a `.Renviron` file, either stored in the

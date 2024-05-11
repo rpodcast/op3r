@@ -4,3 +4,5 @@
 ^\.here$
 ^\.github$
 ^LICENSE\.md$
+^\.Renviron
+^\.Renviron.example
