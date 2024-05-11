@@ -15,6 +15,7 @@ is_rss_url <- function(x) {
   stringr::str_starts(x, "http")
 }
 
+# https://www.geeksforgeeks.org/how-to-validate-guid-globally-unique-identifier-using-regular-expression/
 is_podcast_guid <- function(x) {
   stringr::str_detect(x, "^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$")
 }
