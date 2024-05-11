@@ -1,7 +1,7 @@
 let
  pkgs = import (fetchTarball "https://github.com/rstats-on-nix/nixpkgs/archive/refs/heads/r-updates.tar.gz") {};
  rpkgs = builtins.attrValues {
-  inherit (pkgs.rPackages) cli devtools dplyr httptest2 httr2 jsonlite languageserver lifecycle purrr rlang stringr tibble tidyr;
+  inherit (pkgs.rPackages) base64url cli devtools dplyr httptest2 httr2 jsonlite languageserver lifecycle purrr rlang stringr tibble tidyr;
 };
    system_packages = builtins.attrValues {
   inherit (pkgs) R glibcLocales vscodium nix;

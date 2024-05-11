@@ -10,3 +10,11 @@ env_var_present <- function(env_var) {
 is_testing <- function() {
   identical(Sys.getenv("TESTTHAT"), "true")
 }
+
+is_rss_url <- function(x) {
+  stringr::str_starts(x, "http")
+}
+
+is_podcast_guid <- function(x) {
+  stringr::str_detect(x, "^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$")
+}
