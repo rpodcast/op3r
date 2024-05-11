@@ -1,0 +1,6 @@
+^dev$
+^default.nix$
+^result$
+^\.here$
+^\.github$
+^LICENSE\.md$

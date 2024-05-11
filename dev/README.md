@@ -1,0 +1,1 @@
+Use this directory to store temporary files during development process.
