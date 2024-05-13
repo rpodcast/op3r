@@ -13,8 +13,8 @@
 #' 
 #' @examplesIf op3r::op3_token_isset()
 #' # Requires API token
-#' 
-#' op3_show(show_id = bb28afcc-137e-5c66-b231-4ffad7979b44")
+#'
+#' op3_show(show_id = "bb28afcc-137e-5c66-b231-4ffad7979b44")
 op3_show <- function(show_id, episodes = FALSE) {
   if (is_rss_url(show_id)) {
     show_id <- base64url::base64_urlencode(show_id)
