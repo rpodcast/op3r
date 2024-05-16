@@ -4,7 +4,7 @@ let
   inherit (pkgs.rPackages) base64url cli devtools dplyr httptest2 httr2 jsonlite languageserver lifecycle lubridate purrr rlang stringr tibble tidyr;
 };
    system_packages = builtins.attrValues {
-  inherit (pkgs) R glibcLocales vscodium nix;
+  inherit (pkgs) R glibcLocales vscodium nix pandoc;
 };
   in
   pkgs.mkShell {
