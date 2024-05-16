@@ -6,3 +6,5 @@
 ^LICENSE\.md$
 ^\.Renviron
 ^\.Renviron.example
+^\.vscode$
+^README\.Rmd$
