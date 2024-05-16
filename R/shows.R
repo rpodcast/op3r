@@ -1,3 +1,13 @@
+op3_error_body <- function(resp) {
+  resp_body <- httr2::resp_body_json(resp)
+  if ("message" %in% names(resp_body)) {
+    return(resp_body$message)
+  }
+  if ("error" %in% names(resp_body)) {
+    return(resp_body$error)
+  }
+}
+
 #' Get podcast show information
 #' 
 #' `op3_show()` obtains show-level information for a given podcast
@@ -37,6 +47,9 @@ op3_show <- function(show_id, episodes = FALSE) {
         episodes = "exclude"
       )
   }
+  result_query <- result_query |>
+    httr2::req_error(body = op3_error_body)
+  
   result_raw <- httr2::req_perform(result_query)
   result_json <- httr2::resp_body_json(result_raw)
   res_df <- tibble::as_tibble(result_json)
@@ -45,4 +58,24 @@ op3_show <- function(show_id, episodes = FALSE) {
       tidyr::unnest_wider(col = "episodes", names_sep = "_")
   }
   return(res_df)
+}
+
+op3_get_show_uuid <- function(show_guid = NULL, show_rss_url = NULL) {
+  if (all(!is.null(show_guid), !is.null(show_rss_url))) {
+    cli::cli_abort(
+      "Only one of show_guid or show_rss_url can be specified.",
+      call = rlang::caller_env()
+    )
+  }
+
+  if (all(is.null(show_guid), is.null(show_rss_url))) {
+    cli::cli_abort(
+      "One of show_guid or show_rss_url must be specified.",
+      call = rlang::caller_env()
+    )
+  }
+
+  show_id <- purrr::compact(c(show_guid, show_rss_url))
+  show_df <- op3_show(show_id)
+  return(show_df$showUuid)
 }

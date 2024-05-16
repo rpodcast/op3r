@@ -1,8 +1,7 @@
 #' Get recent episodes with transcripts
 #' 
-#' `op3_transcripts()` obtains the most recent episodes
-#' of podcasts using OP3 contain transcripts along with
-#' their daily download numbers.
+#' `op3_transcripts()` obtains the most recent episodes of podcasts using OP3
+#'  containing transcripts along with their daily download numbers.
 #' @param limit Integer of maximum number of episodes to
 #' return. The maximum limit supported is 100.
 #' 
@@ -54,7 +53,7 @@ op3_transcripts <- function(limit = 100) {
 op3_top_show_apps <- function(show_id) {
   id_type <- get_id_type(show_id)
   query_param <- switch(id_type,
-    rss = "feedUrlbase64",
+    rss = "feedUrlBase64",
     podcast_guid = "podcastGuid",
     show_uuid = "showUuid"
   )
@@ -70,7 +69,8 @@ op3_top_show_apps <- function(show_id) {
       "queries",
       "top-apps-for-show"
     ) |>
-    httr2::req_url_query(!!!query_list)
+    httr2::req_url_query(!!!query_list) |>
+    httr2::req_error(body = op3_error_body)
 
   result_raw <- httr2::req_perform(result_query)
   result_json <- httr2::resp_body_json(result_raw)
@@ -122,16 +122,17 @@ op3_top_apps <- function(device_name = NULL) {
 #' `op3_downloads_show()` obtains the number of monthly downloads and average
 #' weekly downloads over the last four weeks (excludes bots)
 #' @param show_id One or more character strings of OP3 show UUID values
-#' 
+#' @param nest_downloads Boolean to create a list column of the weekly
+#'   download metrics or expand the data frame to have one row per
+#'   week of download metrics. Default is `TRUE`.
 #' @return tibble (TODO FINISH)
 #' @export
 #' @examplesIf op3r::op3_token_isset()
 #' # Requires API token
 #'
 #' op3_downloads_show(show_id = "a18389b8a52d4112a782b32f40f73df6")
-op3_downloads_show <- function(show_id) {
+op3_downloads_show <- function(show_id, nest_downloads = TRUE) {
   # verify that supplied show_id is a valid OP3 UUID
-  # TODO Finish error message
   if (any(purrr::map_lgl(show_id, ~!is_show_uuid(.x)))) {
     cli::cli_abort(
       message = c(
@@ -148,9 +149,28 @@ op3_downloads_show <- function(show_id) {
     )
 
   result_query <- result_query |>
-    httr2::req_url_query(showUuid = show_id, .multi = "explode")
+    httr2::req_url_query(showUuid = show_id, .multi = "explode") |>
+    httr2::req_error(body = op3_error_body)
 
   result_raw <- httr2::req_perform(result_query)
   result_json <- httr2::resp_body_json(result_raw)
-  return(result_json)
+
+  # create tibbles out of each show supplied
+  download_list <- purrr::map(result_json$showDownloadCounts, ~{
+    df <- tibble::tibble(
+      days = .x$days,
+      monthlyDownloads = .x$monthlyDownloads,
+      weeklyAvgDownloads = .x$weeklyAvgDownloads,
+      numWeeks = .x$numWeeks,
+      weekNumber = seq_len(numWeeks),
+      weeklyDownloads = purrr::list_simplify(.x$weeklyDownloads)
+    )
+    if (nest_downloads) {
+      df <- tidyr::nest(df, download_data = c(weekNumber, weeklyDownloads))
+    }
+    return(df)
+  })
+
+  res_df <- dplyr::bind_rows(download_list)
+  return(res_df)
 }
