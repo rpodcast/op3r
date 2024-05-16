@@ -11,8 +11,13 @@ RoxygenNote: 7.3.1
 Imports: 
     base64url,
     cli,
-    glue,
+    dplyr,
     httr2,
-    lubridate
+    lubridate,
+    purrr,
+    rlang,
+    stringr,
+    tibble,
+    tidyr
 Suggests: 
     httptest2
