@@ -8,3 +8,4 @@
 result
 dev/*
 !dev/README.md
+docs
