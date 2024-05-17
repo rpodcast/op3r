@@ -14,7 +14,16 @@ download metrics or expand the data frame to have one row per
 week of download metrics. Default is \code{TRUE}.}
 }
 \value{
-tibble (TODO FINISH)
+\code{tibble} data frame with the following columns:
+\itemize{
+\item \code{days}: Number of days in time window
+\item \code{monthlyDownloads}: Number of downloads in month
+\item \code{weeklyAvgDownloads}: Average number of downloads per week in month
+\item \code{numWeeks}: Number of weeks in time window
+\item \code{download_data}: Nested data frame of download numbers per week (when \code{nest_downloads} is TRUE)
+\item \code{weekNumber}: Week number in time window (when \code{nest_downloads} is FALSE)
+\item \code{weeklyDownloads}: Number of downloads for \code{weekNumber} (when \code{nest_downloads} is FALSE)
+}
 }
 \description{
 \code{op3_downloads_show()} obtains the number of monthly downloads and average

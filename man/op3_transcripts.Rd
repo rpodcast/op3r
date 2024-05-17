@@ -4,11 +4,15 @@
 \alias{op3_transcripts}
 \title{Get recent episodes with transcripts}
 \usage{
-op3_transcripts(limit = 100)
+op3_transcripts(limit = 100, nest_downloads = TRUE)
 }
 \arguments{
 \item{limit}{Integer of maximum number of episodes to
 return. The maximum limit supported is 100.}
+
+\item{nest_downloads}{Boolean to create a list column of the daily
+download metrics or expand the data frame to have one row per
+day of download metrics. Default is \code{TRUE}.}
 }
 \value{
 \code{tibble} data frame with the following columns:
@@ -18,10 +22,19 @@ return. The maximum limit supported is 100.}
 \item \code{podcastGuid}: Podcast GUID
 \item \code{episodeItemGuid}: Episode GUID
 \item \code{hasTranscripts}: Boolean indicating if the episode has a transcript
-\item \code{dailyDownloads}: List of episode download numbers by date
+\item \code{dailyDownloads}: List of episode download numbers by date (when \code{nest_downloads} is TRUE)
+\item \code{date}: Date of download number (when \code{nest_downloads} is FALSE)
+\item \code{n_downloads}: Number of downloads for the \code{date} (when \code{nest_downloads} is FALSE)
 }
 }
 \description{
 \code{op3_transcripts()} obtains the most recent episodes of podcasts using OP3
 containing transcripts along with their daily download numbers.
+}
+\examples{
+\dontshow{if (op3r::op3_token_isset()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Requires API token
+
+op3_transcripts(limit = 5, nest_downloads = FALSE))
+\dontshow{\}) # examplesIf}
 }

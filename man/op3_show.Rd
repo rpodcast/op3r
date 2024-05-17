@@ -14,8 +14,15 @@ a podcast RSS feed URL.}
 the show-level information. Default is \code{FALSE}.}
 }
 \value{
-\code{tibble} data frame with show-level information and episode
-information if requested.
+\code{tibble} data frame with the following columns:
+\itemize{
+\item \code{showUuid}: Podcast OP3 UUID
+\item \code{title}:  Podcast title
+\item \code{podcastGuid}: Podcast GUID
+\item \code{statsPageUrl}: URL of the OP3 statistics web page for the podcast
+\item \code{episodes_id}: Episode ID (when \code{episodes} is TRUE)
+\item \code{episodes_title}: Episode title (when \code{episodes} is TRUE)
+}
 }
 \description{
 \code{op3_show()} obtains show-level information for a given podcast
