@@ -4,15 +4,24 @@
 #'  containing transcripts along with their daily download numbers.
 #' @param limit Integer of maximum number of episodes to
 #' return. The maximum limit supported is 100.
-#' 
+#' @param nest_downloads Boolean to create a list column of the daily
+#'   download metrics or expand the data frame to have one row per
+#'   day of download metrics. Default is `TRUE`.
 #' @return `tibble` data frame with the following columns:
 #' * `asof`: Timestamp
 #' * `pubdate`: Episode publish timestamp
 #' * `podcastGuid`: Podcast GUID
 #' * `episodeItemGuid`: Episode GUID
 #' * `hasTranscripts`: Boolean indicating if the episode has a transcript
-#' * `dailyDownloads`: List of episode download numbers by date
-op3_transcripts <- function(limit = 100) {
+#' * `dailyDownloads`: List of episode download numbers by date (when `nest_downloads` is TRUE)
+#' * `date`: Date of download number (when `nest_downloads` is FALSE)
+#' * `n_downloads`: Number of downloads for the `date` (when `nest_downloads` is FALSE)
+#' @export
+#' @examplesIf op3r::op3_token_isset()
+#' # Requires API token
+#'
+#' op3_transcripts(limit = 5, nest_downloads = FALSE))
+op3_transcripts <- function(limit = 100, nest_downloads = TRUE) {
   assert_valid_limit(limit, max_limit = 100)
   result_query <- req_op3() |>
     httr2::req_url_path_append(
@@ -28,6 +37,19 @@ op3_transcripts <- function(limit = 100) {
   res_list <- purrr::pluck(result_json, "rt")
   res_df <- tibble::as_tibble(res_list) |>
     tidyr::unnest_wider(col = "episodes")
+
+  if (!nest_downloads) {
+    res_df <- res_df |>
+      dplyr::mutate(download_df = purrr::map(dailyDownloads, ~{
+        if (is.null(.x)) return(NULL)
+        tibble::tibble(
+          date = lubridate::ymd(names(.x)),
+          n_downloads = purrr::flatten_dbl(.x)
+        )})
+      ) |>
+      tidyr::unnest(cols = "download_df") |>
+      dplyr::select(-dailyDownloads)
+  }
 
   return(res_df)
 }
@@ -125,7 +147,14 @@ op3_top_apps <- function(device_name = NULL) {
 #' @param nest_downloads Boolean to create a list column of the weekly
 #'   download metrics or expand the data frame to have one row per
 #'   week of download metrics. Default is `TRUE`.
-#' @return tibble (TODO FINISH)
+#' @return `tibble` data frame with the following columns:
+#' * `days`: Number of days in time window
+#' * `monthlyDownloads`: Number of downloads in month
+#' * `weeklyAvgDownloads`: Average number of downloads per week in month
+#' * `numWeeks`: Number of weeks in time window
+#' * `download_data`: Nested data frame of download numbers per week (when `nest_downloads` is TRUE)
+#' * `weekNumber`: Week number in time window (when `nest_downloads` is FALSE)
+#' * `weeklyDownloads`: Number of downloads for `weekNumber` (when `nest_downloads` is FALSE)
 #' @export
 #' @examplesIf op3r::op3_token_isset()
 #' # Requires API token

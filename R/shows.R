@@ -17,8 +17,13 @@ op3_error_body <- function(resp) {
 #' @param episodes Boolean to return episode-level metadata along with
 #'   the show-level information. Default is `FALSE`.
 #' 
-#' @return `tibble` data frame with show-level information and episode
-#'   information if requested.
+#' @return `tibble` data frame with the following columns:
+#' * `showUuid`: Podcast OP3 UUID
+#' * `title`:  Podcast title
+#' * `podcastGuid`: Podcast GUID
+#' * `statsPageUrl`: URL of the OP3 statistics web page for the podcast
+#' * `episodes_id`: Episode ID (when `episodes` is TRUE)
+#' * `episodes_title`: Episode title (when `episodes` is TRUE)
 #' @export
 #' 
 #' @examplesIf op3r::op3_token_isset()
