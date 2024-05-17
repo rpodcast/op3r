@@ -37,3 +37,35 @@ variables called `OP3_API_TOKEN` within a project-level or default
 user-directory `.Renviron` file.
 
 ## Basic Usage
+
+### Authentication
+
+Save your OP3 API token in a project-level or user-level `.Renviron`
+file using the following as a template:
+
+    OP3_API_TOKEN="abcd123"
+
+You can check whether authentication is working correctly with the
+`op3_token_isset()` function:
+
+``` r
+library(op3r)
+op3_token_isset()
+```
+
+    #> [1] TRUE
+
+### Recent Downloads with Transcripts
+
+``` r
+op3_transcripts(limit = 5, nest_downloads = FALSE)
+#> # A tibble: 5 × 7
+#>   asof             pubdate podcastGuid episodeItemGuid hasTranscripts date      
+#>   <chr>            <chr>   <chr>       <chr>           <lgl>          <date>    
+#> 1 2024-05-16T00:0… 2024-0… 451330fc-9… 65978d90-52e4-… TRUE           2024-05-15
+#> 2 2024-05-16T00:0… 2024-0… 43a4f801-0… 92038b82-09f8-… TRUE           2024-05-15
+#> 3 2024-05-16T00:0… 2024-0… f81ee600-3… 16f852e2-7c03-… TRUE           2024-05-15
+#> 4 2024-05-16T00:0… 2024-0… 66ae706b-9… bec625a1-7a5a-… TRUE           2024-05-15
+#> 5 2024-05-16T00:0… 2024-0… 1f23616e-6… b181f8db-ade2-… TRUE           2024-05-15
+#> # ℹ 1 more variable: n_downloads <dbl>
+```

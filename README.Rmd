@@ -38,3 +38,32 @@ The API endpoints supported by `op3r` require an API token. To obtain your own s
 
 ## Basic Usage
 
+### Authentication
+
+Save your OP3 API token in a project-level or user-level `.Renviron` file using the following as a template:
+
+```
+OP3_API_TOKEN="abcd123"
+```
+
+You can check whether authentication is working correctly with the `op3_token_isset()` function:
+
+```{r}
+#| echo: true
+#| eval: false
+library(op3r)
+op3_token_isset()
+```
+
+```{r}
+#| echo: false
+#| eval: true
+library(op3r)
+op3_token_isset()
+```
+
+### Recent Downloads with Transcripts
+
+```{r}
+op3_transcripts(limit = 5, nest_downloads = FALSE)
+```
