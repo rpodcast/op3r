@@ -1,9 +1,10 @@
 Package: op3r
 Title: R Interface to the OP3 API
 Version: 0.0.0.9000
-Authors@R: 
-    person("Eric", "Nantz", , "theRcast@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Eric", "Nantz", , "theRcast@gmail.com", role = c("aut", "cre")),
+    person("John", "Spurlock", role = "ctb", comment = "Author of OP3 project"))
+Description: Provide a tidy interface to the Open Prefix Project (OP3) API
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
