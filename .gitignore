@@ -9,3 +9,4 @@ result
 dev/*
 !dev/README.md
 docs
+inst/doc

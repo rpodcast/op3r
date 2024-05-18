@@ -1,0 +1,111 @@
+---
+title: "Introduction to op3r"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{op3r}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(op3r)
+```
+
+The `{op3r}` package was created to bring the novel [Open Podcast Prefix Project](https://op3.dev/) (OP3) API to R users through an streamlined and straight-forward interface. A growing number of podcasts adopting the Podcastion 2.0 namespace are opting in to the OP3 service as a robust and transparent source of statistics associated with their podcast.
+
+## Initial setup
+
+The API endpoints supported by `{op3r}` require an API token. To obtain your own set, create a free developer account at <https://op3.dev/api/docs> and save the token as an environment variables called `OP3_API_TOKEN`  within a project-level or default user-directory `.Renviron` file. Below is an example (change to match your token value):
+
+```
+OP3_API_TOKEN="abcd123"
+```
+
+Once the package is installed, you can verify if authentication is working as expected:
+
+```{r}
+library(op3r)
+op3_token_isset()
+```
+
+## Case Study
+
+The API endpoints offered by the OP3 service offer the following general capabilities:
+
+* Assembling metrics pooled across all podcasts utilizing the OP3 service.
+* Metrics associated with a specific podcast using the OP3 service.
+
+The examples below demonstrate each of these perspectives. The podcast used for the single-podcast examples is the [R Weekly Highlights Podcast](https://serve.podhome.fm/r-weekly-highlights) hosted by Eric Nantz and Michael Thomas. First we load additional R packages used for analysis and visualization:
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+
+### Podcast metadata
+
+Each podcast using the OP3 project is assigned a universally unique identifier (UUID). Many of the functions tailored to specific podcasts rely on this identifier as a parameter. To find this identifier for a given podcast, you can use either of the following methods:
+
+* Use the `op3_show()` function and supply either the podcast's GUID or RSS feed URL for the required `show_id` parameter: 
+
+```{r}
+rweekly_show_rss <- "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44"
+
+op3_show(show_id = rweekly_show_rss)
+```
+
+* Use the `op3_get_show_uuid()` function with either the podcast GUID or RSS feed URL for `show_id`:
+
+```{r}
+op3_get_show_uuid("https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44")
+
+op3_get_show_uuid("bb28afcc-137e-5c66-b231-4ffad7979b44")
+```
+
+### Download Metrics
+
+Within the podcast industry, many hosts and hosting companies gravitate towards download metrics. The `op3_downloads_show()` function obtains download statistics for the previous 30 days of the time the function is executed (for additional details on how OP3 calculates downloads refer to the official [documentation](https://op3.dev/download-calculation)):
+
+```{r}
+# using the OP3 UUID for R Weekly Highlights
+show_id <- "c008c9c7cfe847dda55cfdde54a22154"
+op3_downloads_show(show_id = show_id)
+```
+
+If you are interested in the downloads per week captured in the metrics, you can run the same function with `nest_downloads = FALSE`:
+
+```{r}
+op3_downloads_show(show_id = show_id, nest_downloads = FALSE) |>
+  select(weekNumber, weeklyDownloads)
+```
+
+Additional download metrics are available based on applications used to play the podcast. The `op3_too_showsapp()` function obtains metrics over the last three calendar months from the time of execution:
+
+```{r}
+op3_top_show_apps(show_id = show_id)
+```
+
+
+### Hits
+
+```{r}
+# https://op3.dev/e/https://serve.podhome.fm/episode/Podhomefrom99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3
+
+# https://op3.dev/e/https://serve.podhome.fm/episode/Podhomefrom99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385073280234160488c23a72a-d2f2-49e8-a460-df0535340d29v1.mp3
+
+#url_string <- "https://op3.dev/e/https://serve.podhome.fm/episode/Podhomefrom99cfd30f-e40c-426a-3557-08dc4ea63bb0/*"
+
+url_string <- "https://op3.dev/e/cdn.pensieriincodice.it/*"
+
+
+df <- op3_hits(limit = 1000, url = url_string)
+
+```

@@ -21,5 +21,8 @@ Imports:
     tibble,
     tidyr
 Suggests: 
-    httptest2
+    httptest2,
+    knitr,
+    rmarkdown
 URL: https://rpodcast.github.io/op3r/
+VignetteBuilder: knitr
