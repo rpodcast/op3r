@@ -92,20 +92,3 @@ Additional download metrics are available based on applications used to play the
 ```{r}
 op3_top_show_apps(show_id = show_id)
 ```
-
-
-### Hits
-
-```{r}
-# https://op3.dev/e/https://serve.podhome.fm/episode/Podhomefrom99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3
-
-# https://op3.dev/e/https://serve.podhome.fm/episode/Podhomefrom99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385073280234160488c23a72a-d2f2-49e8-a460-df0535340d29v1.mp3
-
-#url_string <- "https://op3.dev/e/https://serve.podhome.fm/episode/Podhomefrom99cfd30f-e40c-426a-3557-08dc4ea63bb0/*"
-
-url_string <- "https://op3.dev/e/cdn.pensieriincodice.it/*"
-
-
-df <- op3_hits(limit = 1000, url = url_string)
-
-```
