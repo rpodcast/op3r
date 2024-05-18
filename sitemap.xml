@@ -10,6 +10,12 @@
     <loc>https://rpodcast.github.io/op3r/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://rpodcast.github.io/op3r/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://rpodcast.github.io/op3r/articles/op3r.html</loc>
+  </url>
+  <url>
     <loc>https://rpodcast.github.io/op3r/authors.html</loc>
   </url>
   <url>
@@ -26,6 +32,9 @@
   </url>
   <url>
     <loc>https://rpodcast.github.io/op3r/reference/op3_downloads_show.html</loc>
+  </url>
+  <url>
+    <loc>https://rpodcast.github.io/op3r/reference/op3_get_show_uuid.html</loc>
   </url>
   <url>
     <loc>https://rpodcast.github.io/op3r/reference/op3_hits.html</loc>

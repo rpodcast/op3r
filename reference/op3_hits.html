@@ -20,7 +20,10 @@ processed by the OP3 service."><meta property="og:image" content="https://rpodca
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
-      <ul class="navbar-nav me-auto"><li class="active nav-item">
+      <ul class="navbar-nav me-auto"><li class="nav-item">
+  <a class="nav-link" href="../articles/op3r.html">Get started</a>
+</li>
+<li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
 <li class="nav-item">
@@ -115,11 +118,24 @@ json-a format.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># op3r::op3_token_isset()</span></span></span>
-<span class="r-in"><span><span class="co"># Requires API token</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Requires API token</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">op3_hits</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 15</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    time    uuid  hashedIpAddress method url   userAgent range edgeColo continent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2024-0… 5ed2… 7b68b5ff2eadef… GET    http… Spotify/… byte… ORD      NA       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2024-0… 8ecb… aef566c030c502… HEAD   http… Pocket C… <span style="color: #BB0000;">NA</span>    YVR      NA       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2024-0… c642… e03bd87453a705… GET    http… %D0%9F%D… byte… DME      EU       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2024-0… 79ac… fc534f10a11660… GET    http… CastBox/… byte… CPH      EU       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2024-0… d2d7… 015ffcf4a860f8… GET    http… Podcasts… byte… AMS      EU       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2024-0… a7c5… a3fc0140b70f5d… GET    http… Spotify/… byte… IAD      NA       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2024-0… 9184… 5afca1189b30ea… GET    http… Overcast… <span style="color: #BB0000;">NA</span>    AMS      EU       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2024-0… 1787… d7ab15d9e22d62… HEAD   http… Pocket C… <span style="color: #BB0000;">NA</span>    AMS      EU       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2024-0… ee32… b4e877b93b20a2… GET    http… Spotify/… byte… HKG      AS       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2024-0… baea… d38958f5df59b6… GET    http… Spotify/… byte… DFW      NA       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: country &lt;chr&gt;, timezone &lt;chr&gt;, regionCode &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   region &lt;chr&gt;, metroCode &lt;chr&gt;, xpsId &lt;chr&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
