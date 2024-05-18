@@ -2,6 +2,7 @@
 
 export(get_op3_token)
 export(op3_downloads_show)
+export(op3_get_show_uuid)
 export(op3_hits)
 export(op3_show)
 export(op3_token_isset)

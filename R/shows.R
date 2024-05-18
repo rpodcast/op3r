@@ -65,6 +65,17 @@ op3_show <- function(show_id, episodes = FALSE) {
   return(res_df)
 }
 
+#' Get podcast OP3 UUID from Podcast GUID or RSS Feed
+#' 
+#' `op3_get_show_uuid()` uses the API to obtain the podcast
+#' OP3 UUID based on either the podcast GUID or podcast RSS feed.
+#' Only one of the two can be specified.
+#' 
+#' @param show_guid String representing the podcast GUID.
+#' @param show_rss_url String representing the podcast RSS feed
+#' 
+#' @return string with the podcast UUID
+#' @export
 op3_get_show_uuid <- function(show_guid = NULL, show_rss_url = NULL) {
   if (all(!is.null(show_guid), !is.null(show_rss_url))) {
     cli::cli_abort(
