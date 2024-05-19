@@ -35,6 +35,6 @@ containing transcripts along with their daily download numbers.
 \dontshow{if (op3r::op3_token_isset()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Requires API token
 
-op3_transcripts(limit = 5, nest_downloads = FALSE))
+op3_transcripts(limit = 5, nest_downloads = FALSE)
 \dontshow{\}) # examplesIf}
 }
