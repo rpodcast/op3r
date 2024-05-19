@@ -126,8 +126,6 @@ additional R packages used for analysis and visualization:</p>
 <span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="podcast-metadata">Podcast metadata<a class="anchor" aria-label="anchor" href="#podcast-metadata"></a>
 </h3>
@@ -140,7 +138,7 @@ given podcast, you can use either of the following methods:</p>
 podcast’s GUID or RSS feed URL for the required <code>show_id</code>
 parameter:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rweekly_show_rss</span> <span class="op">&lt;-</span> <span class="st">"https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44"</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/op3_show.html">op3_show</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">rweekly_show_rss</span><span class="op">)</span></span>
@@ -152,10 +150,10 @@ parameter:</li>
 <li>Use the <code><a href="../reference/op3_get_show_uuid.html">op3_get_show_uuid()</a></code> function with either the
 podcast GUID or RSS feed URL for <code>show_id</code>:</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/op3_get_show_uuid.html">op3_get_show_uuid</a></span><span class="op">(</span><span class="st">"https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "c008c9c7cfe847dda55cfdde54a22154"</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/op3_get_show_uuid.html">op3_get_show_uuid</a></span><span class="op">(</span><span class="st">"bb28afcc-137e-5c66-b231-4ffad7979b44"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "c008c9c7cfe847dda55cfdde54a22154"</span></span></code></pre></div>
@@ -169,47 +167,60 @@ gravitate towards download metrics. The
 for the previous 30 days of the time the function is executed (for
 additional details on how OP3 calculates downloads refer to the official
 <a href="https://op3.dev/download-calculation" class="external-link">documentation</a>):</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># using the OP3 UUID for R Weekly Highlights</span></span>
 <span><span class="va">show_id</span> <span class="op">&lt;-</span> <span class="st">"c008c9c7cfe847dda55cfdde54a22154"</span></span>
 <span><span class="fu"><a href="../reference/op3_downloads_show.html">op3_downloads_show</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">show_id</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
 <span><span class="co">#&gt;   days                monthlyDownloads weeklyAvgDownloads numWeeks download_data</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 111111111111111111…             <span style="text-decoration: underline;">2</span>410                575        4 <span style="color: #949494;">&lt;tibble&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 111111111111111111…             <span style="text-decoration: underline;">2</span>372                536        4 <span style="color: #949494;">&lt;tibble&gt;</span></span></span></code></pre></div>
 <p>If you are interested in the downloads per week captured in the
 metrics, you can run the same function with
 <code>nest_downloads = FALSE</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/op3_downloads_show.html">op3_downloads_show</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">show_id</span>, nest_downloads <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">weekNumber</span>, <span class="va">weeklyDownloads</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 2</span></span></span>
 <span><span class="co">#&gt;   weekNumber weeklyDownloads</span></span>
 <span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          1             565</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          2             597</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          3             618</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          4             518</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          1             404</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          2             620</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          3             619</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          4             499</span></span></code></pre></div>
 <p>Additional download metrics are available based on applications used
 to play the podcast. The <code>op3_too_showsapp()</code> function
 obtains metrics over the last three calendar months from the time of
 execution:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/op3_top_show_apps.html">op3_top_show_apps</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">show_id</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 3</span></span></span>
 <span><span class="co">#&gt;    app_name          value show_uuid                       </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Apple Podcasts      737 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Overcast            530 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> gPodder             339 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Pocket Casts        339 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Podcast Addict      261 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> YouTube Music       157 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Apple Podcasts      745 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Overcast            533 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Pocket Casts        341 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> gPodder             339 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Podcast Addict      262 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> YouTube Music       163 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Google Podcasts     153 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AntennaPod          124 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Snipd                90 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Unknown Apple App    83 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AntennaPod          125 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Snipd                91 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Unknown Apple App    86 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
+<p>Other URLs for hits endpoint</p>
+<p>this works</p>
+<p><a href="https://op3.dev/api/1/redirect-logs?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/17-kde-express-akademy-es-2023/17-KDE_Express-AkademyES2023.mp3&amp;format=json&amp;token=preview07ce" class="external-link uri">https://op3.dev/api/1/redirect-logs?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/17-kde-express-akademy-es-2023/17-KDE_Express-AkademyES2023.mp3&amp;format=json&amp;token=preview07ce</a></p>
+<p>this works</p>
+<p><a href="https://op3.dev/api/1/redirect-logs?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/*&amp;format=json&amp;token=preview07ce" class="external-link uri">https://op3.dev/api/1/redirect-logs?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/*&amp;format=json&amp;token=preview07ce</a></p>
+<p>this works</p>
+<p><a href="https://op3.dev/api/1/hits?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/*&amp;format=json&amp;token=preview07ce" class="external-link uri">https://op3.dev/api/1/hits?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/*&amp;format=json&amp;token=preview07ce</a></p>
+<p>this works!!!</p>
+<p>For podhome, we need to use this format for the URL of episodes</p>
+<p><a href="https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3" class="external-link uri">https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3</a></p>
+<p>following works in web browser</p>
+<p>TODO: Try in my package</p>
+<p><a href="https://op3.dev/api/1/hits?url=https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3&amp;format=json&amp;token=preview07ce" class="external-link uri">https://op3.dev/api/1/hits?url=https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3&amp;format=json&amp;token=preview07ce</a></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

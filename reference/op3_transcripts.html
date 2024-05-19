@@ -83,7 +83,19 @@ day of download metrics. Default is <code>TRUE</code>.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Requires API token</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">op3_transcripts</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5</span>, nest_downloads <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   asof                pubdate             podcastGuid            episodeItemGuid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2024-05-18 <span style="color: #949494;">00:00:00</span> 2024-05-17 <span style="color: #949494;">20:30:00</span> d34b03cb-e3e1-5f32-a7… 4881e198-b9ab-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2024-05-18 <span style="color: #949494;">00:00:00</span> 2024-05-17 <span style="color: #949494;">20:12:28</span> a9a56b87-575a-5f6f-96… 28-2024-05-17-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2024-05-18 <span style="color: #949494;">00:00:00</span> 2024-05-17 <span style="color: #949494;">20:00:00</span> e48e57a2-86ff-5f91-95… ed2e12e3-c605-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 2024-05-18 <span style="color: #949494;">00:00:00</span> 2024-05-17 <span style="color: #949494;">19:55:25</span> 917393e3-1b1e-5cef-ac… PC20-180       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 2024-05-18 <span style="color: #949494;">00:00:00</span> 2024-05-17 <span style="color: #949494;">19:30:00</span> e48e57a2-86ff-5f91-95… 3887ae50-3bc2-…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: hasTranscripts &lt;lgl&gt;, date &lt;date&gt;, n_downloads &lt;dbl&gt;</span></span>
+</code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
