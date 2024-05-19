@@ -37,8 +37,10 @@ exclusive. Default is \code{TRUE}.}
 ending at the supplied value. The object must be class \code{Date}. Default
 is \code{NULL}.}
 
-\item{url}{Optional string to fulter results by the specific URL providing
-the redirect. Default is \code{NULL}.}
+\item{url}{Optional string to filter results by the specific URL providing
+the redirect. The URL is often a direct link to a podcast episode file,
+or a version of the URL with a wildcard character \code{*} to enable multiple
+episodes for a given podcast. Default is \code{NULL}.}
 
 \item{hashed_ip_address}{Optional string to filter results by the specific
 IP address secure hash. Default is \code{NULL}.}
@@ -55,6 +57,13 @@ processed by the OP3 service.
 \dontshow{if (op3r::op3_token_isset()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Requires API token
 
+# obtain 10 records
 op3_hits(limit = 10)
+
+# records based on specific podcast episode
+op3_hits(url = "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3")
+
+# records for multiple episodes using a wildcard in URL
+op3_hits(url = "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/*")
 \dontshow{\}) # examplesIf}
 }
