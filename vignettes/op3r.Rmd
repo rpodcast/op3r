@@ -46,7 +46,6 @@ The examples below demonstrate each of these perspectives. The podcast used for 
 
 ```{r}
 library(dplyr)
-library(ggplot2)
 ```
 
 
@@ -92,3 +91,30 @@ Additional download metrics are available based on applications used to play the
 ```{r}
 op3_top_show_apps(show_id = show_id)
 ```
+
+
+Other URLs for hits endpoint
+
+this works
+
+https://op3.dev/api/1/redirect-logs?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/17-kde-express-akademy-es-2023/17-KDE_Express-AkademyES2023.mp3&format=json&token=preview07ce
+
+this works
+
+https://op3.dev/api/1/redirect-logs?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/*&format=json&token=preview07ce
+
+this works
+
+https://op3.dev/api/1/hits?url=https://op3.dev/e,pg=a9a56b87-575a-5f6f-9636-cdf7b73e6230/archive.org/download/*&format=json&token=preview07ce
+
+this works!!!
+
+For podhome, we need to use this format for the URL of episodes
+
+https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3
+
+following works in web browser
+
+TODO: Try in my package
+
+https://op3.dev/api/1/hits?url=https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3&format=json&token=preview07ce
