@@ -20,7 +20,7 @@
 #' @examplesIf op3r::op3_token_isset()
 #' # Requires API token
 #'
-#' op3_transcripts(limit = 5, nest_downloads = FALSE))
+#' op3_transcripts(limit = 5, nest_downloads = FALSE)
 op3_transcripts <- function(limit = 100, nest_downloads = TRUE) {
   assert_valid_limit(limit, max_limit = 100)
   result_query <- req_op3() |>
@@ -36,7 +36,11 @@ op3_transcripts <- function(limit = 100, nest_downloads = TRUE) {
   result_json <- httr2::resp_body_json(result_raw)
   res_list <- purrr::pluck(result_json, "rt")
   res_df <- tibble::as_tibble(res_list) |>
-    tidyr::unnest_wider(col = "episodes")
+    tidyr::unnest_wider(col = "episodes") |>
+    dplyr::mutate(
+      asof = lubridate::ymd_hms(asof),
+      pubdate = lubridate::ymd_hms(pubdate)
+    )
 
   if (!nest_downloads) {
     res_df <- res_df |>
@@ -134,8 +138,8 @@ op3_top_apps <- function(device_name = NULL) {
   result_json <- httr2::resp_body_json(result_raw)
   
   res_df <- purrr::map_dfr(result_json$appShares, ~ .x |> tibble::as_tibble(), .id = "app_name")
-  res_df$min_date <- result_json$minDate
-  res_df$max_date <- result_json$maxDate
+  res_df$min_date <- lubridate::ymd(result_json$minDate)
+  res_df$max_date <- lubridate::ymd(result_json$maxDate)
   return(res_df)
 }
 

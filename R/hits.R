@@ -91,7 +91,10 @@ op3_hits <- function(format = "json", limit = 100, desc = TRUE, start = NULL, st
   }
 
   result_list <- result_json[["rows"]]
-  res_df <- purrr::map(result_list, ~tibble::as_tibble(.x)) |>
+  res_df <- purrr::map(result_list, ~{
+    df <- tibble::as_tibble(.x) |>
+      dplyr::mutate(time = lubridate::ymd_hms(time))
+  }) |>
     dplyr::bind_rows()
   return(res_df)
 }
