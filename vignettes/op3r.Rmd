@@ -1,5 +1,5 @@
 ---
-title: "Introduction to op3r"
+title: "op3r"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{op3r}
