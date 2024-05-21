@@ -24,8 +24,22 @@
 #' @param hashed_ip_address Optional string to filter results by the specific
 #'   IP address secure hash. Default is `NULL`.
 #' 
-#' @return A`tibble` data frame if json format, otherwise a nested list if
-#'   json-a format.
+#' @return A`tibble` data frame for the `json` format, otherwise a nested list
+#'   for the `json-a` format. The data frame contains the following columns:
+#' * `time`: Timestamp of current record
+#' * `uuid`: OP3 UUID for podcast
+#' * `hashedIpAddress`: Secure hash of the record's originating IP address
+#' * `method`: Type of HTTP method used
+#' * `url`: URL of the record's request
+#' * `userAgent`: Request's reported user agent
+#' * `range`: If application, the request's specified bytes range.
+#' * `edgeColo`: Three-letter airport code associated with the record
+#' * `continent`: The request's originating continent
+#' * `country`: Two-letter country code of the record
+#' * `timezone`: Request timezone
+#' * `regionCode`: Abbreviation of region
+#' * `region`: Region of request
+#' * `metroCode`: Region metro code
 #' @export
 #' @examplesIf op3r::op3_token_isset()
 #' # Requires API token

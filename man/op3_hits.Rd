@@ -46,8 +46,24 @@ episodes for a given podcast. Default is \code{NULL}.}
 IP address secure hash. Default is \code{NULL}.}
 }
 \value{
-A\code{tibble} data frame if json format, otherwise a nested list if
-json-a format.
+A\code{tibble} data frame for the \code{json} format, otherwise a nested list
+for the \code{json-a} format. The data frame contains the following columns:
+\itemize{
+\item \code{time}: Timestamp of current record
+\item \code{uuid}: OP3 UUID for podcast
+\item \code{hashedIpAddress}: Secure hash of the record's originating IP address
+\item \code{method}: Type of HTTP method used
+\item \code{url}: URL of the record's request
+\item \code{userAgent}: Request's reported user agent
+\item \code{range}: If application, the request's specified bytes range.
+\item \code{edgeColo}: Three-letter airport code associated with the record
+\item \code{continent}: The request's originating continent
+\item \code{country}: Two-letter country code of the record
+\item \code{timezone}: Request timezone
+\item \code{regionCode}: Abbreviation of region
+\item \code{region}: Region of request
+\item \code{metroCode}: Region metro code
+}
 }
 \description{
 \code{op3_hits()} obtains lowest-level log records for every prefix redirect
