@@ -16,7 +16,7 @@ git_archive_pkgs = [(pkgs.rPackages.buildRPackage {
     };
   }) ];
    system_packages = builtins.attrValues {
-  inherit (pkgs) R glibcLocales vscodium nix pandoc;
+  inherit (pkgs) R glibcLocales vscodium nix pandoc qpdf;
 };
   in
   pkgs.mkShell {
