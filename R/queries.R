@@ -59,14 +59,14 @@ op3_transcripts <- function(limit = 100, nest_downloads = TRUE) {
 }
 
 #' Get download numbers by application for a show
-#' 
+#'
 #' `op3_top_show_apps()` obtains the download numbers for individual
 #' podcast applications over the last three calendar months
 #' for a specific show.
 #' 
 #' @param show_id String representing an OP3 show UUID, podcast GUID, or
 #'   a podcast RSS feed URL.
-#' 
+#'
 #' @return `tibble` data frame with the following columns:
 #' * `show_uuid`: OP3 show UUID
 #' * `app_name`: Name of podcast application
