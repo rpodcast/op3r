@@ -1,0 +1,53 @@
+{
+    "rt": {
+        "asof": "2024-05-20T00:00:00.000Z",
+        "episodes": [
+            {
+                "pubdate": "2024-05-19T22:11:39.000Z",
+                "podcastGuid": "54aeb0b5-9e06-5ebd-b9dd-7f473e8f85d3",
+                "episodeItemGuid": "dbfc6a7a-4e37-4240-83f8-adf20e7165ac",
+                "hasTranscripts": true,
+                "dailyDownloads": {
+                    "2024-05-19": 14
+                }
+            },
+            {
+                "pubdate": "2024-05-19T21:30:10.000Z",
+                "podcastGuid": "856cd618-7f34-57ea-9b84-3600f1f65e7f",
+                "episodeItemGuid": "http://1661.noagendanotes.com",
+                "hasTranscripts": true,
+                "dailyDownloads": {
+                    "2024-05-19": 15889
+                }
+            },
+            {
+                "pubdate": "2024-05-19T17:29:32.000Z",
+                "podcastGuid": "0a23de2e-5a96-5a8f-a89e-43db6fe0eaf7",
+                "episodeItemGuid": "https://castopod.warroza.pl/@radiowarroza/episodes/pszczele-wiesci-020",
+                "hasTranscripts": true,
+                "dailyDownloads": {
+                    "2024-05-19": 7
+                }
+            },
+            {
+                "pubdate": "2024-05-19T16:00:48.000Z",
+                "podcastGuid": "dfbf5542-62c2-5979-990d-2410c7916772",
+                "episodeItemGuid": "a4ed8bbc-d553-5740-9308-6534de157c41",
+                "hasTranscripts": true,
+                "dailyDownloads": {
+                    "2024-05-19": 14
+                }
+            },
+            {
+                "pubdate": "2024-05-19T14:42:11.000Z",
+                "podcastGuid": "02b2185f-3173-5e6f-bdda-cc60fb797f84",
+                "episodeItemGuid": "img/audio/KEHS2024/KEHS2024-draughts-insulation-ventilation.mp3",
+                "hasTranscripts": true,
+                "dailyDownloads": {
+                    "2024-05-19": 9
+                }
+            }
+        ]
+    },
+    "queryTime": 103
+}
