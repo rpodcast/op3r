@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: c(
     person("Eric", "Nantz", , "theRcast@gmail.com", role = c("aut", "cre")),
     person("John", "Spurlock", role = "ctb", comment = "Author of OP3 project"))
-Description: Provide a tidy interface to the Open Prefix Project (OP3) API
+Description: The op3r package provides a tidy interface to the Open Prefix Project (OP3) API.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -23,6 +23,8 @@ Imports:
 Suggests: 
     httptest2,
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 URL: https://rpodcast.github.io/op3r/
 VignetteBuilder: knitr
+Config/testthat/edition: 3
