@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">op3r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -174,7 +174,7 @@ additional details on how OP3 calculates downloads refer to the official
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
 <span><span class="co">#&gt;   days                monthlyDownloads weeklyAvgDownloads numWeeks download_data</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 111111111111111111…             <span style="text-decoration: underline;">2</span>183                538        4 <span style="color: #949494;">&lt;tibble&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 111111111111111111…             <span style="text-decoration: underline;">2</span>186                539        4 <span style="color: #949494;">&lt;tibble&gt;</span></span></span></code></pre></div>
 <p>If you are interested in the downloads per week captured in the
 metrics, you can run the same function with
 <code>nest_downloads = FALSE</code>:</p>
@@ -184,30 +184,153 @@ metrics, you can run the same function with
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 2</span></span></span>
 <span><span class="co">#&gt;   weekNumber weeklyDownloads</span></span>
 <span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          1             411</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          2             640</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          3             628</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          4             471</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          1             424</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          2             702</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          3             569</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          4             461</span></span></code></pre></div>
 <p>Additional download metrics are available based on applications used
-to play the podcast. The <code>op3_too_showsapp()</code> function
+to play the podcast. The <code><a href="../reference/op3_top_show_apps.html">op3_top_show_apps()</a></code> function
 obtains metrics over the last three calendar months from the time of
 execution:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/op3_top_show_apps.html">op3_top_show_apps</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">show_id</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">show_guid</span> <span class="op">&lt;-</span> <span class="st">"bb28afcc-137e-5c66-b231-4ffad7979b44"</span></span>
+<span><span class="fu"><a href="../reference/op3_top_show_apps.html">op3_top_show_apps</a></span><span class="op">(</span><span class="va">show_guid</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 3</span></span></span>
 <span><span class="co">#&gt;    app_name          value show_uuid                       </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Apple Podcasts      759 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Overcast            536 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Pocket Casts        345 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Apple Podcasts      764 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Overcast            542 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Pocket Casts        347 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> gPodder             339 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Podcast Addict      262 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> YouTube Music       164 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> YouTube Music       168 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Google Podcasts     156 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AntennaPod          130 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AntennaPod          132 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Snipd                93 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Unknown Apple App    86 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="redirect-logs-hits">Redirect Logs / Hits<a class="anchor" aria-label="anchor" href="#redirect-logs-hits"></a>
+</h3>
+<p>Each of the functions demonstrated above are convenient ways to
+obtain derived metrics already pre-computed behind the scenes in the
+corresponding OP3 API endpoints. The common source of information used
+in each of them are redirect logs (hits), a collection of metadata
+dynamically generated each time a client such as a podcast application
+or web browser renders the URL for a podcast episode. To illustrate,
+here is the most recent log metadata at the time this vignette was
+compiled:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/op3_hits.html">op3_hits</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 1</span></span>
+<span><span class="co">#&gt; Columns: 14</span></span>
+<span><span class="co">#&gt; $ time            <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2024-05-22 03:13:55</span></span>
+<span><span class="co">#&gt; $ uuid            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "bf4d3b636ad144b09f6f0685856c01cd"</span></span>
+<span><span class="co">#&gt; $ hashedIpAddress <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4c8c2f87eb2c4057327b08bdfbec31ead9571052"</span></span>
+<span><span class="co">#&gt; $ method          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "GET"</span></span>
+<span><span class="co">#&gt; $ url             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://op3.dev/e/api.spreaker.com/download/episode/…</span></span>
+<span><span class="co">#&gt; $ userAgent       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PodcastAddict/v5 (+https://podcastaddict.com/; Androi…</span></span>
+<span><span class="co">#&gt; $ range           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "bytes=59351587-"</span></span>
+<span><span class="co">#&gt; $ edgeColo        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "DFW"</span></span>
+<span><span class="co">#&gt; $ continent       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "NA"</span></span>
+<span><span class="co">#&gt; $ country         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "US"</span></span>
+<span><span class="co">#&gt; $ timezone        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "America/Chicago"</span></span>
+<span><span class="co">#&gt; $ regionCode      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TX"</span></span>
+<span><span class="co">#&gt; $ region          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Texas"</span></span>
+<span><span class="co">#&gt; $ metroCode       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "618"</span></span></code></pre></div>
+<p>On top of these logs being available across all shows, we can filter
+the logs returned for a particular podcast by setting the
+<code>url</code> parameter to be either a direct link to a podcast
+episode, or a version of the URL with a wildcard placeholder
+<code>*</code> to signal multiple episodes.</p>
+<p>How can we obtain these episode download URLs? You certainly could
+obtain the podcast’s RSS feed and manually inspect each episode entry to
+find the direct link to an episode. However, another R package called <a href="https://rpodcast.github.io/podindexr/" class="external-link"><code>{podindexr}</code></a>
+contains many functions to obtain metadata for podcasts registered on
+the <a href="https://podcastindex.org/" class="external-link">Podcast Index</a>. For example,
+the <code><a href="https://rdrr.io/pkg/podindexr/man/episodes_byurl.html" class="external-link">episodes_byurl()</a></code> function takes a podcast RSS feed as
+input to obtain a collection of metadata associated with up to 1,000
+episodes of a podcast. Here is the metadata associated with the last
+three episodes of the R Weekly Highlights podcast:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># remotes::install_github("rpodcast/podindexr")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">podindexr</span><span class="op">)</span></span>
+<span><span class="va">episode_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/podindexr/man/episodes_byurl.html" class="external-link">episodes_byurl</a></span><span class="op">(</span><span class="va">rweekly_show_rss</span>, max <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">episode_df</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 3</span></span>
+<span><span class="co">#&gt; Columns: 30</span></span>
+<span><span class="co">#&gt; $ id                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 22601290393, 22315244014, 22028048965</span></span>
+<span><span class="co">#&gt; $ title               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Issue 2024-W20 Highlights", "Issue 2024-W19 Highl…</span></span>
+<span><span class="co">#&gt; $ link                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://serve.podhome.fm/episodepage/r-weekly-hig…</span></span>
+<span><span class="co">#&gt; $ description         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "An aesthetically-pleasing journey through the his…</span></span>
+<span><span class="co">#&gt; $ guid                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "54574074-0a1f-4951-8f2a-9084678c6604", "8c23a72a-…</span></span>
+<span><span class="co">#&gt; $ datePublished       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1715756520, 1715152260, 1714548120</span></span>
+<span><span class="co">#&gt; $ datePublishedPretty <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "May 15, 2024 2:02am", "May 08, 2024 2:11am", "May…</span></span>
+<span><span class="co">#&gt; $ dateCrawled         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1715756613, 1715756613, 1715756613</span></span>
+<span><span class="co">#&gt; $ enclosureUrl        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://op3.dev/e/serve.podhome.fm/episode/99cfd3…</span></span>
+<span><span class="co">#&gt; $ enclosureType       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "audio/mpeg", "audio/mpeg", "audio/mpeg"</span></span>
+<span><span class="co">#&gt; $ enclosureLength     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 71545543, 71466423, 53758290</span></span>
+<span><span class="co">#&gt; $ duration            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2955, 2946, 2215</span></span>
+<span><span class="co">#&gt; $ explicit            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0</span></span>
+<span><span class="co">#&gt; $ episode             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 165, 164, 163</span></span>
+<span><span class="co">#&gt; $ episodeType         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "full", "full", "full"</span></span>
+<span><span class="co">#&gt; $ season              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0</span></span>
+<span><span class="co">#&gt; $ image               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://assets.podhome.fm/99cfd30f-e40c-426a-3557…</span></span>
+<span><span class="co">#&gt; $ feedItunesId        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1527876975, 1527876975, 1527876975</span></span>
+<span><span class="co">#&gt; $ feedUrl             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b…</span></span>
+<span><span class="co">#&gt; $ feedImage           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://assets.podhome.fm/99cfd30f-e40c-426a-3557…</span></span>
+<span><span class="co">#&gt; $ feedId              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 1062040, 1062040, 1062040</span></span>
+<span><span class="co">#&gt; $ podcastGuid         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "bb28afcc-137e-5c66-b231-4ffad7979b44", "bb28afcc-…</span></span>
+<span><span class="co">#&gt; $ feedLanguage        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "en-us", "en-us", "en-us"</span></span>
+<span><span class="co">#&gt; $ feedDead            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 0, 0, 0</span></span>
+<span><span class="co">#&gt; $ chaptersUrl         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://assets.podhome.fm/99cfd30f-e40c-426a-3557…</span></span>
+<span><span class="co">#&gt; $ transcriptUrl       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://assets.podhome.fm/99cfd30f-e40c-426a-3557…</span></span>
+<span><span class="co">#&gt; $ soundbite           <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> [915, 264, "Intro to DuckDB"], &lt;NULL&gt;, &lt;NULL&gt;</span></span>
+<span><span class="co">#&gt; $ soundbites          <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> [[915, 264, "Intro to DuckDB"], [915, 264, "Intro …</span></span>
+<span><span class="co">#&gt; $ persons             <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> [[38105478, "Mike Thomas", "host", "cast", "https:…</span></span>
+<span><span class="co">#&gt; $ transcripts         <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> [["https://assets.podhome.fm/99cfd30f-e40c-426a-35…</span></span></code></pre></div>
+<p>The <code>enclosureUrl</code> field gives us the direct link to each
+podcast episode:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html" class="external-link">pull</a></span><span class="op">(</span><span class="va">episode_df</span>, <span class="va">enclosureUrl</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3"</span></span>
+<span><span class="co">#&gt; [2] "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385073280234160488c23a72a-d2f2-49e8-a460-df0535340d29v1.mp3"</span></span>
+<span><span class="co">#&gt; [3] "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385013221315251258372ff1e-a595-4b18-a1cd-036a28153ccdv1.mp3"</span></span></code></pre></div>
+<p>As seen in the output above, we can create a wildcard version of the
+URL by replacing the MP3 file name at the end with a <code>*</code>
+character. Now we can run a revised call to <code><a href="../reference/op3_hits.html">op3_hits()</a></code>
+using this URL as a parameter:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wildcard_url</span> <span class="op">&lt;-</span> <span class="st">"https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/*"</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/op3_hits.html">op3_hits</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">20</span>, url <span class="op">=</span> <span class="va">wildcard_url</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 20 × 15</span></span></span>
+<span><span class="co">#&gt;    time                uuid      hashedIpAddress method url   userAgent edgeColo</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2024-05-22 <span style="color: #949494;">01:58:18</span> 03eb66be… d83b32c0388e3d… GET    http… Podcasts… HKG     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2024-05-22 <span style="color: #949494;">00:03:14</span> 10f478a7… 362c68b586c768… HEAD   http… Apache-H… FRA     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2024-05-21 <span style="color: #949494;">23:07:45</span> 7168c00b… d498cf7932d5e8… HEAD   http… Podcasts… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2024-05-21 <span style="color: #949494;">21:40:37</span> ce5f3c47… 04572758eb9b3e… GET    http… Podcasts… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2024-05-21 <span style="color: #949494;">21:40:37</span> b9a63707… 04572758eb9b3e… GET    http… Podcasts… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2024-05-21 <span style="color: #949494;">20:49:57</span> 55fe5635… da2ee4eabb5c9b… GET    http… Dalvik/2… ORD     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2024-05-21 <span style="color: #949494;">20:49:57</span> 1ea3905d… da2ee4eabb5c9b… GET    http… CastBox/… ORD     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2024-05-21 <span style="color: #949494;">20:35:57</span> e52a45c2… 8cc01073bab0ae… GET    http… iTunes/1… VIE     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2024-05-21 <span style="color: #949494;">20:24:46</span> 69101270… 8cc01073bab0ae… GET    http… iTunes/1… VIE     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2024-05-21 <span style="color: #949494;">17:15:58</span> 74e22440… 956832d8ab2125… GET    http… Overcast… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 2024-05-21 <span style="color: #949494;">16:48:01</span> 2a3a45d9… 59b9dd26a956a3… GET    http… GSA/15.1… CDG     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 2024-05-21 <span style="color: #949494;">15:58:36</span> ba3ed038… 01d9ce427e30d2… HEAD   http… Apache-H… FRA     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 2024-05-21 <span style="color: #949494;">13:02:04</span> f2926a9e… 63912a90e3d577… GET    http… Podverse… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 2024-05-21 <span style="color: #949494;">12:37:10</span> fc6ac352… 418416b6308ebf… GET    http… Podverse… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 2024-05-21 <span style="color: #949494;">12:24:24</span> 8da95eef… 418416b6308ebf… GET    http… Podverse… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 2024-05-21 <span style="color: #949494;">11:09:12</span> 5cfcdcc9… 5655c6e3510bfe… GET    http… GSA/15.1… FRA     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 2024-05-21 <span style="color: #949494;">10:45:12</span> 440580ce… 3275b81fa2751c… GET    http… Podcasts… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> 2024-05-21 <span style="color: #949494;">08:29:11</span> 7bb60061… 610b25adebedef… HEAD   http… iTMS      SJC     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> 2024-05-21 <span style="color: #949494;">06:05:05</span> e1bda77c… 942e091ae0e535… GET    http… CastBox/… MAN     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> 2024-05-21 <span style="color: #949494;">01:52:16</span> d2bea36a… 28b78fab4fa752… GET    http… axios/0.… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 8 more variables: continent &lt;chr&gt;, country &lt;chr&gt;, timezone &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   regionCode &lt;chr&gt;, region &lt;chr&gt;, metroCode &lt;chr&gt;, range &lt;chr&gt;, xpsId &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

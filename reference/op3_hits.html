@@ -12,7 +12,7 @@ processed by the OP3 service."><meta property="og:image" content="https://rpodca
     
     <a class="navbar-brand me-2" href="../index.html">op3r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -138,21 +138,20 @@ for the <code>json-a</code> format. The data frame contains the following column
 <span class="r-in"><span><span class="co"># obtain 10 records</span></span></span>
 <span class="r-in"><span><span class="fu">op3_hits</span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 15</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    time                uuid         hashedIpAddress method url   userAgent range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2024-05-22 <span style="color: #949494;">02:08:23</span> d6f8a1023fd… 066be2184527c0… GET    http… AmazonMu… byte…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2024-05-22 <span style="color: #949494;">02:08:23</span> d5d1374d9db… a66dee76910b06… GET    http… python-r… <span style="color: #BB0000;">NA</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> ac4a97f651a… 066be2184527c0… GET    http… AmazonMu… byte…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> d2fc7498487… 20b711c062cb7f… GET    http… atc/1.0   <span style="color: #BB0000;">NA</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> 415a2fa35c8… e3c10dbc19072b… HEAD   http… Pocket C… <span style="color: #BB0000;">NA</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> a07c439c8b9… 066be2184527c0… GET    http… AmazonMu… byte…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> b8d80a43821… ef00a405750bb2… GET    http… stagefri… <span style="color: #BB0000;">NA</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> fabb9037729… e0d79837fbeee3… GET    http… Spotify/… byte…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> d1dbab0d0b0… 7986357daad210… GET    http… Podcasts… byte…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2024-05-22 <span style="color: #949494;">02:08:22</span> 4bf6902d715… 78ae7856dc0924… GET    http… Spotify/… byte…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: edgeColo &lt;chr&gt;, continent &lt;chr&gt;, country &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   timezone &lt;chr&gt;, regionCode &lt;chr&gt;, region &lt;chr&gt;, metroCode &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   xpsId &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    time                uuid      hashedIpAddress method url   userAgent edgeColo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2024-05-22 <span style="color: #949494;">03:45:20</span> 6be825fa… 1b3c5f57e82ee7… GET    http… Podcasts… ULN     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2024-05-22 <span style="color: #949494;">03:45:20</span> 299a29bc… 1b3c5f57e82ee7… GET    http… Podcasts… ULN     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2024-05-22 <span style="color: #949494;">03:45:20</span> 625380f8… 1b3c5f57e82ee7… GET    http… Podcasts… ULN     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2024-05-22 <span style="color: #949494;">03:45:20</span> a571af55… 1b3c5f57e82ee7… GET    http… Podcasts… ULN     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2024-05-22 <span style="color: #949494;">03:45:19</span> 57c9c70c… 3efa2770119757… GET    http… Podcasts… AMS     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2024-05-22 <span style="color: #949494;">03:45:19</span> 340e8902… 3d4a4a988f81f3… GET    http… PodcastR… AMS     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2024-05-22 <span style="color: #949494;">03:45:19</span> b6be2823… b4622928d300f1… HEAD   http… Pocket C… MAN     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2024-05-22 <span style="color: #949494;">03:45:19</span> 4f2e87cf… 3d4a4a988f81f3… GET    http… okhttp/4… AMS     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2024-05-22 <span style="color: #949494;">03:45:19</span> e3bae89d… f9023d7286656e… GET    http… Spotify/… LAX     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2024-05-22 <span style="color: #949494;">03:45:19</span> 4dba823c… 87bfc8911a8705… GET    http… Podcasts… ORD     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: continent &lt;chr&gt;, country &lt;chr&gt;, timezone &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   regionCode &lt;chr&gt;, region &lt;chr&gt;, range &lt;chr&gt;, xpsId &lt;chr&gt;, metroCode &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># records based on specific podcast episode</span></span></span>
 <span class="r-in"><span><span class="fu">op3_hits</span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3"</span><span class="op">)</span></span></span>
