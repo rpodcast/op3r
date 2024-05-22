@@ -1,6 +1,6 @@
 Package: op3r
 Title: R Interface to the OP3 API
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(
     person("Eric", "Nantz", , "theRcast@gmail.com", role = c("aut", "cre")),
     person("John", "Spurlock", role = "ctb", comment = "Author of OP3 project"))
