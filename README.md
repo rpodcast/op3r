@@ -53,19 +53,24 @@ library(op3r)
 op3_token_isset()
 ```
 
-    #> [1] TRUE
+### Example: Download Metrics
 
-### Recent Downloads with Transcripts
+The following example shows how to obtain OP3 download metrics of the [R
+Weekly Highlights](https://serve.podhome.fm/r-weekly-highlights)
+Podcast.
 
 ``` r
-op3_transcripts(limit = 5, nest_downloads = FALSE)
-#> # A tibble: 5 × 7
-#>   asof             pubdate podcastGuid episodeItemGuid hasTranscripts date      
-#>   <chr>            <chr>   <chr>       <chr>           <lgl>          <date>    
-#> 1 2024-05-16T00:0… 2024-0… 451330fc-9… 65978d90-52e4-… TRUE           2024-05-15
-#> 2 2024-05-16T00:0… 2024-0… 43a4f801-0… 92038b82-09f8-… TRUE           2024-05-15
-#> 3 2024-05-16T00:0… 2024-0… f81ee600-3… 16f852e2-7c03-… TRUE           2024-05-15
-#> 4 2024-05-16T00:0… 2024-0… 66ae706b-9… bec625a1-7a5a-… TRUE           2024-05-15
-#> 5 2024-05-16T00:0… 2024-0… 1f23616e-6… b181f8db-ade2-… TRUE           2024-05-15
-#> # ℹ 1 more variable: n_downloads <dbl>
+# using the OP3 UUID for R Weekly Highlights
+show_id <- "c008c9c7cfe847dda55cfdde54a22154"
+op3_downloads_show(show_id = show_id)
+#> # A tibble: 1 × 5
+#>   days                monthlyDownloads weeklyAvgDownloads numWeeks download_data
+#>   <chr>                          <int>              <int>    <int> <list>       
+#> 1 111111111111111111…             2186                539        4 <tibble>
 ```
+
+### Learn More
+
+You can find a complete reference of the available functions as well as
+a comprehensive getting started guide at
+<https://rpodcast.github.io/op3r>.

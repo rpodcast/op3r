@@ -11,6 +11,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+httptest2::start_vignette("vignette-mocks/README")
 ```
 
 # op3r <img src='man/figures/logo.png' align="right" width="25%" min-width="120px"/>
@@ -55,15 +57,26 @@ library(op3r)
 op3_token_isset()
 ```
 
+### Example: Download Metrics
+
+The following example shows how to obtain OP3 download metrics of the [R Weekly Highlights](https://serve.podhome.fm/r-weekly-highlights) Podcast.
+
 ```{r}
 #| echo: false
 #| eval: true
 library(op3r)
-op3_token_isset()
 ```
-
-### Recent Downloads with Transcripts
 
 ```{r}
-op3_transcripts(limit = 5, nest_downloads = FALSE)
+# using the OP3 UUID for R Weekly Highlights
+show_id <- "c008c9c7cfe847dda55cfdde54a22154"
+op3_downloads_show(show_id = show_id)
 ```
+
+```{r, include=FALSE}
+httptest2::end_vignette()
+```
+
+### Learn More
+
+You can find a complete reference of the available functions as well as a comprehensive getting started guide at <https://rpodcast.github.io/op3r>.
