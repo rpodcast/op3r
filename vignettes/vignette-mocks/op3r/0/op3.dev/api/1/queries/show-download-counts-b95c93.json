@@ -1,16 +1,16 @@
 {
-    "asof": "2024-05-19",
+    "asof": "2024-05-20",
     "showDownloadCounts": {
         "c008c9c7cfe847dda55cfdde54a22154": {
             "days": "111111111111111111111111111111",
-            "monthlyDownloads": 2183,
+            "monthlyDownloads": 2186,
             "weeklyDownloads": [
-                411,
-                640,
-                628,
-                471
+                424,
+                702,
+                569,
+                461
             ],
-            "weeklyAvgDownloads": 538,
+            "weeklyAvgDownloads": 539,
             "numWeeks": 4
         }
     },

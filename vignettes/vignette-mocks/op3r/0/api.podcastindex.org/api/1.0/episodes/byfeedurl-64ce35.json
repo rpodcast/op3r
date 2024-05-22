@@ -1,0 +1,228 @@
+{
+    "status": "true",
+    "items": [
+        {
+            "id": 22601290393,
+            "title": "Issue 2024-W20 Highlights",
+            "link": "https://serve.podhome.fm/episodepage/r-weekly-highlights/issue-2024-w20-highlights",
+            "description": "An aesthetically-pleasing journey through the history of R, another demonstration of DuckDB's power with analytics, and how webR with shinylive brings new learning life to the Pharmaverse TLG gallery.<br /><br />Episode Links<br />This week's curator: Sam Parmar - @parmsam@fosstodon.org (Mastodon) & @parmsam_ (X/Twitter)The Aesthetics Wiki - an R AddendumR Dplyr vs. DuckDB - How to Enhance Your Data Processing Pipelines with R DuckDBTLG Catalog 🤝 WebREntire issue available at rweekly.org/2024-W20Supplement Resources<br />Eric joins Adam Curry & Dave Jones on Podcasting 2.0 Episode 179! https://podverse.fm/clip/dYmaWGIOcDuckDB quacks Arrow: A zero-copy data integration between Apa...",
+            "guid": "54574074-0a1f-4951-8f2a-9084678c6604",
+            "datePublished": 1715756520,
+            "datePublishedPretty": "May 15, 2024 2:02am",
+            "dateCrawled": 1715756613,
+            "enclosureUrl": "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.mp3",
+            "enclosureType": "audio/mpeg",
+            "enclosureLength": 71545543,
+            "duration": 2955,
+            "explicit": 0,
+            "episode": 165,
+            "episodeType": "full",
+            "season": 0,
+            "image": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472622229075360cover.jpg",
+            "feedItunesId": 1527876975,
+            "feedUrl": "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44",
+            "feedImage": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472622229075360cover.jpg",
+            "feedId": 1062040,
+            "podcastGuid": "bb28afcc-137e-5c66-b231-4ffad7979b44",
+            "feedLanguage": "en-us",
+            "feedDead": 0,
+            "feedDuplicateOf": null,
+            "chaptersUrl": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/63851340872787683054574074-0a1f-4951-8f2a-9084678c6604v1.chapters.json",
+            "transcriptUrl": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/transcript_54574074-0a1f-4951-8f2a-9084678c6604638513418925610129.html",
+            "soundbite": {
+                "startTime": 915,
+                "duration": 264,
+                "title": "Intro to DuckDB"
+            },
+            "soundbites": [
+                {
+                    "startTime": 915,
+                    "duration": 264,
+                    "title": "Intro to DuckDB"
+                },
+                {
+                    "startTime": 915,
+                    "duration": 264,
+                    "title": "Intro to DuckDB"
+                },
+                {
+                    "startTime": 915,
+                    "duration": 264,
+                    "title": "Intro to DuckDB"
+                },
+                {
+                    "startTime": 915,
+                    "duration": 264,
+                    "title": "Intro to DuckDB"
+                },
+                {
+                    "startTime": 915,
+                    "duration": 264,
+                    "title": "Intro to DuckDB"
+                },
+                {
+                    "startTime": 915,
+                    "duration": 264,
+                    "title": "Intro to DuckDB"
+                }
+            ],
+            "persons": [
+                {
+                    "id": 38105478,
+                    "name": "Mike Thomas",
+                    "role": "host",
+                    "group": "cast",
+                    "href": "https://www.ketchbrookanalytics.com",
+                    "img": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472715104813275mike_thomas.jpg"
+                },
+                {
+                    "id": 38105479,
+                    "name": "Eric Nantz",
+                    "role": "host",
+                    "group": "cast",
+                    "href": "https://r-podcast.org",
+                    "img": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472642955897394rpodcast-hexagon.jpg"
+                }
+            ],
+            "transcripts": [
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/transcript_54574074-0a1f-4951-8f2a-9084678c6604638513418925610129.html",
+                    "type": "text/html"
+                },
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/54574074-0a1f-4951-8f2a-9084678c6604638513418913663144.srt",
+                    "type": "application/srt"
+                },
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/54574074-0a1f-4951-8f2a-9084678c6604638513418904907111.vtt",
+                    "type": "text/vtt"
+                }
+            ]
+        },
+        {
+            "id": 22315244014,
+            "title": "Issue 2024-W19 Highlights",
+            "link": "https://serve.podhome.fm/episodepage/r-weekly-highlights/issue-2024-w19-highlights",
+            "description": "Our take on the important conversations spurred by the recent R deserialization CVE, how simulations may save you from cracking open that probability textbook, and recapping the exciting 2024 Shiny Conference.<br />Episode Links<br />This week's curator: Colin Fay - @colinfay@fosstodon.org & [@ColinFay]](https://twitter.com/ColinFay) (X/Twitter)Everything you never wanted to know about the R vulnerability, but shouldn't be afraid to askCalculating birthday probabilities with R instead of mathHighlights from ShinyConf 2024Entire issue available at rweekly.org/2024-W19Supplement Resources<br />R-bitrary Code Execution: Vulnerability in R’s Deserialization https://hiddenlayer.com/research/r-bitrary-code-execution/CVE-2024-27322 Sh...",
+            "guid": "8c23a72a-d2f2-49e8-a460-df0535340d29",
+            "datePublished": 1715152260,
+            "datePublishedPretty": "May 08, 2024 2:11am",
+            "dateCrawled": 1715756613,
+            "enclosureUrl": "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385073280234160488c23a72a-d2f2-49e8-a460-df0535340d29v1.mp3",
+            "enclosureType": "audio/mpeg",
+            "enclosureLength": 71466423,
+            "duration": 2946,
+            "explicit": 0,
+            "episode": 164,
+            "episodeType": "full",
+            "season": 0,
+            "image": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472622229075360cover.jpg",
+            "feedItunesId": 1527876975,
+            "feedUrl": "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44",
+            "feedImage": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472622229075360cover.jpg",
+            "feedId": 1062040,
+            "podcastGuid": "bb28afcc-137e-5c66-b231-4ffad7979b44",
+            "feedLanguage": "en-us",
+            "feedDead": 0,
+            "feedDuplicateOf": null,
+            "chaptersUrl": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385073280234160488c23a72a-d2f2-49e8-a460-df0535340d29v1.chapters.json",
+            "transcriptUrl": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/transcript_8c23a72a-d2f2-49e8-a460-df0535340d29638507336192619710.html",
+            "persons": [
+                {
+                    "id": 37543993,
+                    "name": "Mike Thomas",
+                    "role": "host",
+                    "group": "cast",
+                    "href": "https://www.ketchbrookanalytics.com",
+                    "img": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472715104813275mike_thomas.jpg"
+                },
+                {
+                    "id": 37543994,
+                    "name": "Eric Nantz",
+                    "role": "host",
+                    "group": "cast",
+                    "href": "https://r-podcast.org",
+                    "img": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472642955897394rpodcast-hexagon.jpg"
+                }
+            ],
+            "transcripts": [
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/transcript_8c23a72a-d2f2-49e8-a460-df0535340d29638507336192619710.html",
+                    "type": "text/html"
+                },
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/8c23a72a-d2f2-49e8-a460-df0535340d29638507336183019601.srt",
+                    "type": "application/srt"
+                },
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/8c23a72a-d2f2-49e8-a460-df0535340d29638507336173308345.vtt",
+                    "type": "text/vtt"
+                }
+            ]
+        },
+        {
+            "id": 22028048965,
+            "title": "Issue 2024-W18 Highlights",
+            "link": "https://serve.podhome.fm/episodepage/r-weekly-highlights/issue-2024-w18-highlights",
+            "description": "Why R 4.4.0 may reduce your trips to a certain kind of stack overflow, a call to update your favorite Shiny application code snippets, and how the steller ASTHOS Profile Shiny dashboard has your hosts blown away and fighting the urge to refactor their applications UIs!<br />Episode Links<br />This week's curator: Eric Nantz: @rpodcast@podcastindex.social (Mastodon) and @theRcast (X/Twitter)What's new in R 4.4.0?It's time to add bslib to your shinyapp snippetTailoring Shiny for Modern UsersEntire issue available at rweekly.org/2024-W18Supplement Resources<br />Full R 4.4.0 changelog https://cran.r-project.org/doc/manuals/r-release/NEWS.htmlR-bitrary...",
+            "guid": "8372ff1e-a595-4b18-a1cd-036a28153ccd",
+            "datePublished": 1714548120,
+            "datePublishedPretty": "May 01, 2024 2:22am",
+            "dateCrawled": 1715756613,
+            "enclosureUrl": "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385013221315251258372ff1e-a595-4b18-a1cd-036a28153ccdv1.mp3",
+            "enclosureType": "audio/mpeg",
+            "enclosureLength": 53758290,
+            "duration": 2215,
+            "explicit": 0,
+            "episode": 163,
+            "episodeType": "full",
+            "season": 0,
+            "image": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472622229075360cover.jpg",
+            "feedItunesId": 1527876975,
+            "feedUrl": "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44",
+            "feedImage": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472622229075360cover.jpg",
+            "feedId": 1062040,
+            "podcastGuid": "bb28afcc-137e-5c66-b231-4ffad7979b44",
+            "feedLanguage": "en-us",
+            "feedDead": 0,
+            "feedDuplicateOf": null,
+            "chaptersUrl": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/6385013221315251258372ff1e-a595-4b18-a1cd-036a28153ccdv1.chapters.json",
+            "transcriptUrl": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/transcript_8372ff1e-a595-4b18-a1cd-036a28153ccd638501338187496522.html",
+            "persons": [
+                {
+                    "id": 36983142,
+                    "name": "Mike Thomas",
+                    "role": "host",
+                    "group": "cast",
+                    "href": "https://www.ketchbrookanalytics.com",
+                    "img": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472715104813275mike_thomas.jpg"
+                },
+                {
+                    "id": 36983143,
+                    "name": "Eric Nantz",
+                    "role": "host",
+                    "group": "cast",
+                    "href": "https://r-podcast.org",
+                    "img": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/638472642955897394rpodcast-hexagon.jpg"
+                }
+            ],
+            "transcripts": [
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/transcript_8372ff1e-a595-4b18-a1cd-036a28153ccd638501338187496522.html",
+                    "type": "text/html"
+                },
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/8372ff1e-a595-4b18-a1cd-036a28153ccd638501338177801854.srt",
+                    "type": "application/srt"
+                },
+                {
+                    "url": "https://assets.podhome.fm/99cfd30f-e40c-426a-3557-08dc4ea63bb0/8372ff1e-a595-4b18-a1cd-036a28153ccd638501338168141787.vtt",
+                    "type": "text/vtt"
+                }
+            ]
+        }
+    ],
+    "count": 3,
+    "query": "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44",
+    "description": "Found matching items."
+}

@@ -1,14 +1,14 @@
 {
     "showUuid": "c008c9c7cfe847dda55cfdde54a22154",
     "appDownloads": {
-        "Apple Podcasts": 759,
-        "Overcast": 536,
-        "Pocket Casts": 345,
+        "Apple Podcasts": 764,
+        "Overcast": 542,
+        "Pocket Casts": 347,
         "gPodder": 339,
         "Podcast Addict": 262,
-        "YouTube Music": 164,
+        "YouTube Music": 168,
         "Google Podcasts": 156,
-        "AntennaPod": 130,
+        "AntennaPod": 132,
         "Snipd": 93,
         "Unknown Apple App": 86,
         "Player FM": 76,
@@ -20,7 +20,7 @@
         "iVoox": 27,
         "iTunes": 26,
         "Podverse": 22,
-        "Podbean": 21,
+        "Podbean": 22,
         "Apple HomePod": 11,
         "Feedly": 9,
         "DoggCatcher": 7,
@@ -35,5 +35,5 @@
         "Rhythmbox": 2,
         "LinkedIn": 1
     },
-    "queryTime": 88
+    "queryTime": 100
 }
