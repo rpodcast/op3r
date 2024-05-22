@@ -99,22 +99,24 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rpodcast.github.io/op3r/">op3r</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/op3_token_isset.html">op3_token_isset</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="recent-downloads-with-transcripts">Recent Downloads with Transcripts<a class="anchor" aria-label="anchor" href="#recent-downloads-with-transcripts"></a>
+<h3 id="example-download-metrics">Example: Download Metrics<a class="anchor" aria-label="anchor" href="#example-download-metrics"></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/op3_transcripts.html">op3_transcripts</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">5</span>, nest_downloads <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 5 × 7</span></span>
-<span><span class="co">#&gt;   asof             pubdate podcastGuid episodeItemGuid hasTranscripts date      </span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;           &lt;lgl&gt;          &lt;date&gt;    </span></span>
-<span><span class="co">#&gt; 1 2024-05-16T00:0… 2024-0… 451330fc-9… 65978d90-52e4-… TRUE           2024-05-15</span></span>
-<span><span class="co">#&gt; 2 2024-05-16T00:0… 2024-0… 43a4f801-0… 92038b82-09f8-… TRUE           2024-05-15</span></span>
-<span><span class="co">#&gt; 3 2024-05-16T00:0… 2024-0… f81ee600-3… 16f852e2-7c03-… TRUE           2024-05-15</span></span>
-<span><span class="co">#&gt; 4 2024-05-16T00:0… 2024-0… 66ae706b-9… bec625a1-7a5a-… TRUE           2024-05-15</span></span>
-<span><span class="co">#&gt; 5 2024-05-16T00:0… 2024-0… 1f23616e-6… b181f8db-ade2-… TRUE           2024-05-15</span></span>
-<span><span class="co">#&gt; # ℹ 1 more variable: n_downloads &lt;dbl&gt;</span></span></code></pre></div>
+<p>The following example shows how to obtain OP3 download metrics of the <a href="https://serve.podhome.fm/r-weekly-highlights" class="external-link">R Weekly Highlights</a> Podcast.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># using the OP3 UUID for R Weekly Highlights</span></span>
+<span><span class="va">show_id</span> <span class="op">&lt;-</span> <span class="st">"c008c9c7cfe847dda55cfdde54a22154"</span></span>
+<span><span class="fu"><a href="reference/op3_downloads_show.html">op3_downloads_show</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">show_id</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 5</span></span>
+<span><span class="co">#&gt;   days                monthlyDownloads weeklyAvgDownloads numWeeks download_data</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                          &lt;int&gt;              &lt;int&gt;    &lt;int&gt; &lt;list&gt;       </span></span>
+<span><span class="co">#&gt; 1 111111111111111111…             2186                539        4 &lt;tibble&gt;</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="learn-more">Learn More<a class="anchor" aria-label="anchor" href="#learn-more"></a>
+</h3>
+<p>You can find a complete reference of the available functions as well as a comprehensive getting started guide at <a href="https://rpodcast.github.io/op3r" class="uri">https://rpodcast.github.io/op3r</a>.</p>
 </div>
 </div>
 </div>
