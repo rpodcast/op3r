@@ -48,3 +48,8 @@ assert_valid_limit <- function(limit, max_limit = 20000) {
     )
   }
 }
+
+get_bot_downloads <- function(day_string) {
+  x <- stringr::str_split_1(day_string, "") |> as.numeric()
+  return(sum(x))
+}

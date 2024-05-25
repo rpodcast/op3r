@@ -191,7 +191,7 @@ op3_downloads_show <- function(show_id, nest_downloads = TRUE) {
   # create tibbles out of each show supplied
   download_list <- purrr::map(result_json$showDownloadCounts, ~{
     df <- tibble::tibble(
-      days = .x$days,
+      daysBotDownloads = get_bot_downloads(.x$days),
       monthlyDownloads = .x$monthlyDownloads,
       weeklyAvgDownloads = .x$weeklyAvgDownloads,
       numWeeks = .x$numWeeks,
