@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">op3r</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -172,9 +172,9 @@ additional details on how OP3 calculates downloads refer to the official
 <span><span class="va">show_id</span> <span class="op">&lt;-</span> <span class="st">"c008c9c7cfe847dda55cfdde54a22154"</span></span>
 <span><span class="fu"><a href="../reference/op3_downloads_show.html">op3_downloads_show</a></span><span class="op">(</span>show_id <span class="op">=</span> <span class="va">show_id</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
-<span><span class="co">#&gt;   days                monthlyDownloads weeklyAvgDownloads numWeeks download_data</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 111111111111111111…             <span style="text-decoration: underline;">2</span>186                539        4 <span style="color: #949494;">&lt;tibble&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt;   daysBotDownloads monthlyDownloads weeklyAvgDownloads numWeeks download_data   </span></span>
+<span><span class="co">#&gt;              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>               30             <span style="text-decoration: underline;">2</span>186                539        4 <span style="color: #949494;">&lt;tibble [4 × 2]&gt;</span></span></span></code></pre></div>
 <p>If you are interested in the downloads per week captured in the
 metrics, you can run the same function with
 <code>nest_downloads = FALSE</code>:</p>
