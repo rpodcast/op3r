@@ -98,8 +98,7 @@ to match your token value):</p>
 working as expected:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rpodcast.github.io/op3r/">op3r</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/op3_token_isset.html">op3_token_isset</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/op3_token_isset.html">op3_token_isset</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="case-study">Case Study<a class="anchor" aria-label="anchor" href="#case-study"></a>
@@ -174,7 +173,7 @@ additional details on how OP3 calculates downloads refer to the official
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
 <span><span class="co">#&gt;   daysBotDownloads monthlyDownloads weeklyAvgDownloads numWeeks download_data   </span></span>
 <span><span class="co">#&gt;              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>               30             <span style="text-decoration: underline;">2</span>186                539        4 <span style="color: #949494;">&lt;tibble [4 × 2]&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>               30             <span style="text-decoration: underline;">1</span>972                470        4 <span style="color: #949494;">&lt;tibble [4 × 2]&gt;</span></span></span></code></pre></div>
 <p>If you are interested in the downloads per week captured in the
 metrics, you can run the same function with
 <code>nest_downloads = FALSE</code>:</p>
@@ -184,10 +183,10 @@ metrics, you can run the same function with
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 2</span></span></span>
 <span><span class="co">#&gt;   weekNumber weeklyDownloads</span></span>
 <span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          1             424</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          2             702</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          3             569</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          4             461</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          1             620</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          2             619</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          3             499</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          4             143</span></span></code></pre></div>
 <p>Additional download metrics are available based on applications used
 to play the podcast. The <code><a href="../reference/op3_top_show_apps.html">op3_top_show_apps()</a></code> function
 obtains metrics over the last three calendar months from the time of
@@ -198,16 +197,16 @@ execution:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 33 × 3</span></span></span>
 <span><span class="co">#&gt;    app_name          value show_uuid                       </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Apple Podcasts      764 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Overcast            542 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Pocket Casts        347 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Apple Podcasts      778 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Overcast            550 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Pocket Casts        350 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> gPodder             339 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Podcast Addict      262 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> YouTube Music       168 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Google Podcasts     156 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AntennaPod          132 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Podcast Addict      265 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> YouTube Music       188 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Google Podcasts     158 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AntennaPod          139 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Snipd                93 c008c9c7cfe847dda55cfdde54a22154</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Unknown Apple App    86 c008c9c7cfe847dda55cfdde54a22154</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Unknown Apple App    89 c008c9c7cfe847dda55cfdde54a22154</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 23 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -226,20 +225,20 @@ compiled:</p>
 <span>  <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Rows: 1</span></span>
 <span><span class="co">#&gt; Columns: 14</span></span>
-<span><span class="co">#&gt; $ time            <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2024-05-22 03:13:55</span></span>
-<span><span class="co">#&gt; $ uuid            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "bf4d3b636ad144b09f6f0685856c01cd"</span></span>
-<span><span class="co">#&gt; $ hashedIpAddress <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "4c8c2f87eb2c4057327b08bdfbec31ead9571052"</span></span>
+<span><span class="co">#&gt; $ time            <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 2024-05-25 18:25:01</span></span>
+<span><span class="co">#&gt; $ uuid            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "2525a8c995d14e97b9ff4fb219ef0e2c"</span></span>
+<span><span class="co">#&gt; $ hashedIpAddress <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "9e94063e25414d195e4ebf99aaedf985198b95b5"</span></span>
 <span><span class="co">#&gt; $ method          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "GET"</span></span>
-<span><span class="co">#&gt; $ url             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://op3.dev/e/api.spreaker.com/download/episode/…</span></span>
-<span><span class="co">#&gt; $ userAgent       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "PodcastAddict/v5 (+https://podcastaddict.com/; Androi…</span></span>
-<span><span class="co">#&gt; $ range           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "bytes=59351587-"</span></span>
-<span><span class="co">#&gt; $ edgeColo        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "DFW"</span></span>
+<span><span class="co">#&gt; $ url             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://op3.dev/e/traffic.megaphone.fm/ADV1129270641…</span></span>
+<span><span class="co">#&gt; $ userAgent       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Spotify/8.9.42.575 Android/33 (LM-G900)"</span></span>
+<span><span class="co">#&gt; $ range           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "bytes=0-3145727"</span></span>
+<span><span class="co">#&gt; $ edgeColo        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "ORD"</span></span>
 <span><span class="co">#&gt; $ continent       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "NA"</span></span>
 <span><span class="co">#&gt; $ country         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "US"</span></span>
-<span><span class="co">#&gt; $ timezone        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "America/Chicago"</span></span>
-<span><span class="co">#&gt; $ regionCode      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "TX"</span></span>
-<span><span class="co">#&gt; $ region          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Texas"</span></span>
-<span><span class="co">#&gt; $ metroCode       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "618"</span></span></code></pre></div>
+<span><span class="co">#&gt; $ timezone        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "America/New_York"</span></span>
+<span><span class="co">#&gt; $ regionCode      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "KY"</span></span>
+<span><span class="co">#&gt; $ region          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Kentucky"</span></span>
+<span><span class="co">#&gt; $ metroCode       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "541"</span></span></code></pre></div>
 <p>On top of these logs being available across all shows, we can filter
 the logs returned for a particular podcast by setting the
 <code>url</code> parameter to be either a direct link to a podcast
@@ -309,26 +308,26 @@ using this URL as a parameter:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 20 × 15</span></span></span>
 <span><span class="co">#&gt;    time                uuid      hashedIpAddress method url   userAgent edgeColo</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2024-05-22 <span style="color: #949494;">01:58:18</span> 03eb66be… d83b32c0388e3d… GET    http… Podcasts… HKG     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2024-05-22 <span style="color: #949494;">00:03:14</span> 10f478a7… 362c68b586c768… HEAD   http… Apache-H… FRA     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2024-05-21 <span style="color: #949494;">23:07:45</span> 7168c00b… d498cf7932d5e8… HEAD   http… Podcasts… LHR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2024-05-21 <span style="color: #949494;">21:40:37</span> ce5f3c47… 04572758eb9b3e… GET    http… Podcasts… LHR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2024-05-21 <span style="color: #949494;">21:40:37</span> b9a63707… 04572758eb9b3e… GET    http… Podcasts… LHR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2024-05-21 <span style="color: #949494;">20:49:57</span> 55fe5635… da2ee4eabb5c9b… GET    http… Dalvik/2… ORD     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2024-05-21 <span style="color: #949494;">20:49:57</span> 1ea3905d… da2ee4eabb5c9b… GET    http… CastBox/… ORD     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2024-05-21 <span style="color: #949494;">20:35:57</span> e52a45c2… 8cc01073bab0ae… GET    http… iTunes/1… VIE     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2024-05-21 <span style="color: #949494;">20:24:46</span> 69101270… 8cc01073bab0ae… GET    http… iTunes/1… VIE     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2024-05-21 <span style="color: #949494;">17:15:58</span> 74e22440… 956832d8ab2125… GET    http… Overcast… EWR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 2024-05-21 <span style="color: #949494;">16:48:01</span> 2a3a45d9… 59b9dd26a956a3… GET    http… GSA/15.1… CDG     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 2024-05-21 <span style="color: #949494;">15:58:36</span> ba3ed038… 01d9ce427e30d2… HEAD   http… Apache-H… FRA     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 2024-05-21 <span style="color: #949494;">13:02:04</span> f2926a9e… 63912a90e3d577… GET    http… Podverse… EWR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 2024-05-21 <span style="color: #949494;">12:37:10</span> fc6ac352… 418416b6308ebf… GET    http… Podverse… EWR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 2024-05-21 <span style="color: #949494;">12:24:24</span> 8da95eef… 418416b6308ebf… GET    http… Podverse… EWR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 2024-05-21 <span style="color: #949494;">11:09:12</span> 5cfcdcc9… 5655c6e3510bfe… GET    http… GSA/15.1… FRA     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 2024-05-21 <span style="color: #949494;">10:45:12</span> 440580ce… 3275b81fa2751c… GET    http… Podcasts… EWR     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> 2024-05-21 <span style="color: #949494;">08:29:11</span> 7bb60061… 610b25adebedef… HEAD   http… iTMS      SJC     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> 2024-05-21 <span style="color: #949494;">06:05:05</span> e1bda77c… 942e091ae0e535… GET    http… CastBox/… MAN     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> 2024-05-21 <span style="color: #949494;">01:52:16</span> d2bea36a… 28b78fab4fa752… GET    http… axios/0.… EWR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2024-05-25 <span style="color: #949494;">18:11:30</span> a11378c4… be723a50c9306d… GET    http… Podcasts… DFW     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2024-05-25 <span style="color: #949494;">18:00:33</span> b0992f89… 3288d89f797364… GET    http… AppleCor… YYZ     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2024-05-25 <span style="color: #949494;">17:59:33</span> d5e4eb49… 3288d89f797364… GET    http… AppleCor… YYZ     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2024-05-25 <span style="color: #949494;">17:58:04</span> ebbd6247… 3288d89f797364… GET    http… AppleCor… YYZ     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2024-05-25 <span style="color: #949494;">17:56:22</span> 8c41efa0… 3288d89f797364… GET    http… AppleCor… YYZ     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2024-05-25 <span style="color: #949494;">17:56:22</span> d969ae1e… 3288d89f797364… GET    http… AppleCor… YYZ     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2024-05-25 <span style="color: #949494;">17:56:20</span> 022bb28a… 3288d89f797364… GET    http… AppleCor… YYZ     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2024-05-25 <span style="color: #949494;">16:01:02</span> 92326e56… d02c4cda211ac8… HEAD   http… iTMS      SJC     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2024-05-25 <span style="color: #949494;">14:38:35</span> 5062341d… 0d48c6b69d4fe3… GET    http… CastBox/… FRA     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2024-05-25 <span style="color: #949494;">11:57:22</span> b4624c5a… b7bc8dca9ca126… GET    http… CastBox/… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 2024-05-25 <span style="color: #949494;">11:57:21</span> 1221118e… b7bc8dca9ca126… GET    http… CastBox/… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 2024-05-25 <span style="color: #949494;">11:57:16</span> 8e46ad9a… b7bc8dca9ca126… GET    http… CastBox/… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 2024-05-25 <span style="color: #949494;">11:57:14</span> b0b6a72a… b7bc8dca9ca126… GET    http… CastBox/… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 2024-05-25 <span style="color: #949494;">11:57:05</span> e2ff1880… b7bc8dca9ca126… GET    http… CastBox/… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 2024-05-25 <span style="color: #949494;">11:57:04</span> 62597cd8… b7bc8dca9ca126… GET    http… CastBox/… LHR     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 2024-05-25 <span style="color: #949494;">09:28:29</span> f0c630db… 4759e0cfecd409… GET    http… AntennaP… CPH     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 2024-05-25 <span style="color: #949494;">09:28:28</span> a9f8bc2c… 4759e0cfecd409… GET    http… AntennaP… CPH     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> 2024-05-25 <span style="color: #949494;">09:17:36</span> 247467ca… aba6ac051add9a… HEAD   http… iTMS      SEA     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> 2024-05-25 <span style="color: #949494;">06:39:17</span> 046c6786… 8d24f67d8898e3… GET    http… atc/1.0   MCI     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> 2024-05-25 <span style="color: #949494;">04:43:20</span> be539b09… 77f0f5aedc514b… HEAD   http… Apache-H… FRA     </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 8 more variables: continent &lt;chr&gt;, country &lt;chr&gt;, timezone &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   regionCode &lt;chr&gt;, region &lt;chr&gt;, metroCode &lt;chr&gt;, range &lt;chr&gt;, xpsId &lt;chr&gt;</span></span></span></code></pre></div>
 </div>

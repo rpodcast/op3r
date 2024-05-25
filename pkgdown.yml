@@ -3,7 +3,7 @@ pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   op3r: op3r.html
-last_built: 2024-05-25T04:11Z
+last_built: 2024-05-25T18:44Z
 urls:
   reference: https://rpodcast.github.io/op3r/reference
   article: https://rpodcast.github.io/op3r/articles
