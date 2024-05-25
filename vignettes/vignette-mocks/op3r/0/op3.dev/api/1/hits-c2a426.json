@@ -1,22 +1,22 @@
 {
     "rows": [
         {
-            "time": "2024-05-22T03:13:55.912Z",
-            "uuid": "bf4d3b636ad144b09f6f0685856c01cd",
-            "hashedIpAddress": "4c8c2f87eb2c4057327b08bdfbec31ead9571052",
+            "time": "2024-05-25T18:25:01.608Z",
+            "uuid": "2525a8c995d14e97b9ff4fb219ef0e2c",
+            "hashedIpAddress": "9e94063e25414d195e4ebf99aaedf985198b95b5",
             "method": "GET",
-            "url": "https://op3.dev/e/api.spreaker.com/download/episode/60102704/911_154_cut.mp3",
-            "userAgent": "PodcastAddict/v5 (+https://podcastaddict.com/; Android podcast app)",
-            "range": "bytes=59351587-",
-            "edgeColo": "DFW",
+            "url": "https://op3.dev/e/traffic.megaphone.fm/ADV1129270641.mp3?updated=1692304828",
+            "userAgent": "Spotify/8.9.42.575 Android/33 (LM-G900)",
+            "range": "bytes=0-3145727",
+            "edgeColo": "ORD",
             "continent": "NA",
             "country": "US",
-            "timezone": "America/Chicago",
-            "regionCode": "TX",
-            "region": "Texas",
-            "metroCode": "618"
+            "timezone": "America/New_York",
+            "regionCode": "KY",
+            "region": "Kentucky",
+            "metroCode": "541"
         }
     ],
     "count": 1,
-    "queryTime": 156
+    "queryTime": 145
 }

@@ -23,8 +23,11 @@ Imports:
 Suggests: 
     httptest2,
     knitr,
+    podindexr,
     rmarkdown,
     testthat (>= 3.0.0)
+Remotes:
+    rpodcast/podindexr
 URL: https://rpodcast.github.io/op3r/
 VignetteBuilder: knitr
 Config/testthat/edition: 3

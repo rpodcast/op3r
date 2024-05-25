@@ -1,18 +1,18 @@
 {
-    "asof": "2024-05-20",
+    "asof": "2024-05-24",
     "showDownloadCounts": {
         "c008c9c7cfe847dda55cfdde54a22154": {
             "days": "111111111111111111111111111111",
-            "monthlyDownloads": 2186,
+            "monthlyDownloads": 1972,
             "weeklyDownloads": [
-                424,
-                702,
-                569,
-                461
+                620,
+                619,
+                499,
+                143
             ],
-            "weeklyAvgDownloads": 539,
+            "weeklyAvgDownloads": 470,
             "numWeeks": 4
         }
     },
-    "queryTime": 37
+    "queryTime": 83
 }
