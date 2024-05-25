@@ -31,7 +31,7 @@ OP3_API_TOKEN="abcd123"
 
 Once the package is installed, you can verify if authentication is working as expected:
 
-```{r}
+```{r, echo=TRUE, eval=FALSE}
 library(op3r)
 op3_token_isset()
 ```
