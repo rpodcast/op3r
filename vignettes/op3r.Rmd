@@ -122,7 +122,7 @@ pull(episode_df, enclosureUrl)
 
 As seen in the output above, we can create a wildcard version of the URL by replacing the MP3 file name at the end with a `*` character. Now we can run a revised call to `op3_hits()` using this URL as a parameter:
 
-```{r}
+```{r op3-hits-demo2, eval=op3r::op3_token_isset()}
 wildcard_url <- "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3557-08dc4ea63bb0/*"
 
 op3_hits(limit = 20, url = wildcard_url)
