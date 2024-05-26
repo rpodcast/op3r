@@ -7,7 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r begin-httptest2, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -31,7 +31,7 @@ OP3_API_TOKEN="abcd123"
 
 Once the package is installed, you can verify if authentication is working as expected:
 
-```{r, echo=TRUE, eval=FALSE}
+```{r token_demo, echo=TRUE, eval=FALSE}
 library(op3r)
 op3_token_isset()
 ```
@@ -45,7 +45,7 @@ The API endpoints offered by the OP3 service offer the following general capabil
 
 The examples below demonstrate each of these perspectives. The podcast used for the single-podcast examples is the [R Weekly Highlights Podcast](https://serve.podhome.fm/r-weekly-highlights) hosted by Eric Nantz and Michael Thomas. First we load additional R packages used for analysis and visualization:
 
-```{r}
+```{r load-other-packages}
 library(dplyr)
 ```
 
@@ -56,7 +56,7 @@ Each podcast using the OP3 project is assigned a universally unique identifier (
 
 * Use the `op3_show()` function and supply either the podcast's GUID or RSS feed URL for the required `show_id` parameter: 
 
-```{r}
+```{r op3-show-demo}
 rweekly_show_rss <- "https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44"
 
 op3_show(show_id = rweekly_show_rss)
@@ -64,7 +64,7 @@ op3_show(show_id = rweekly_show_rss)
 
 * Use the `op3_get_show_uuid()` function with either the podcast GUID or RSS feed URL for `show_id`:
 
-```{r}
+```{r op3-get-show-demo}
 op3_get_show_uuid("https://serve.podhome.fm/rss/bb28afcc-137e-5c66-b231-4ffad7979b44")
 
 op3_get_show_uuid("bb28afcc-137e-5c66-b231-4ffad7979b44")
@@ -74,7 +74,7 @@ op3_get_show_uuid("bb28afcc-137e-5c66-b231-4ffad7979b44")
 
 Within the podcast industry, many hosts and hosting companies gravitate towards download metrics. The `op3_downloads_show()` function obtains download statistics for the previous 30 days of the time the function is executed (for additional details on how OP3 calculates downloads refer to the official [documentation](https://op3.dev/download-calculation)):
 
-```{r}
+```{r op3-downloads-show-demo-1}
 # using the OP3 UUID for R Weekly Highlights
 show_id <- "c008c9c7cfe847dda55cfdde54a22154"
 op3_downloads_show(show_id = show_id)
@@ -82,14 +82,14 @@ op3_downloads_show(show_id = show_id)
 
 If you are interested in the downloads per week captured in the metrics, you can run the same function with `nest_downloads = FALSE`:
 
-```{r}
+```{r op3-downloads-show-demo-2}
 op3_downloads_show(show_id = show_id, nest_downloads = FALSE) |>
   select(weekNumber, weeklyDownloads)
 ```
 
 Additional download metrics are available based on applications used to play the podcast. The `op3_top_show_apps()` function obtains metrics over the last three calendar months from the time of execution:
 
-```{r}
+```{r op3-top-show-demo}
 show_guid <- "bb28afcc-137e-5c66-b231-4ffad7979b44"
 op3_top_show_apps(show_guid)
 ```
@@ -98,7 +98,7 @@ op3_top_show_apps(show_guid)
 
 Each of the functions demonstrated above are convenient ways to obtain derived metrics already pre-computed behind the scenes in the corresponding OP3 API endpoints. The common source of information used in each of them are redirect logs (hits), a collection of metadata dynamically generated each time a client such as a podcast application or web browser renders the URL for a podcast episode. To illustrate, here is the most recent log metadata at the time this vignette was compiled:
 
-```{r}
+```{r op3-hits-demo}
 op3_hits(limit = 1) |>
   glimpse()
 ```
@@ -107,7 +107,7 @@ On top of these logs being available across all shows, we can filter the logs re
 
 How can we obtain these episode download URLs? You certainly could obtain the podcast's RSS feed and manually inspect each episode entry to find the direct link to an episode. However, another R package called [`{podindexr}`](https://rpodcast.github.io/podindexr/) contains many functions to obtain metadata for podcasts registered on the [Podcast Index](https://podcastindex.org/). For example, the `episodes_byurl()` function takes a podcast RSS feed as input to obtain a collection of metadata associated with up to 1,000 episodes of a podcast. Here is the metadata associated with the last three episodes of the R Weekly Highlights podcast:
 
-```{r}
+```{r podindexr-demo}
 # remotes::install_github("rpodcast/podindexr")
 library(podindexr)
 episode_df <- episodes_byurl(rweekly_show_rss, max = 3)
@@ -116,7 +116,7 @@ glimpse(episode_df)
 
 The `enclosureUrl` field gives us the direct link to each podcast episode:
 
-```{r}
+```{r enclosure-url-demo}
 pull(episode_df, enclosureUrl)
 ```
 
@@ -128,6 +128,6 @@ wildcard_url <- "https://op3.dev/e/serve.podhome.fm/episode/99cfd30f-e40c-426a-3
 op3_hits(limit = 20, url = wildcard_url)
 ```
 
-```{r, include=FALSE}
+```{r end-httptest2, include=FALSE}
 httptest2::end_vignette()
 ```
